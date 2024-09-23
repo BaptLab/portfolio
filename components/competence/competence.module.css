@@ -1,0 +1,40 @@
+.competenceContainer {
+  position: relative;
+  padding-left: 50px;
+  padding-bottom: 50px;
+  max-width: 550px;
+}
+
+.competenceTitle {
+  font-size: 1.5em;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.competenceDescription {
+  opacity: 40%;
+  padding-right: 100px;
+  margin-bottom: 25px;
+  font-size: 1em;
+}
+
+.competenceListContainer {
+  font-weight: 300;
+  font-size: 1em;
+  list-style-position: inside;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 18; /* Adjust size as needed */
+  height: 18px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
