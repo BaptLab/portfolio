@@ -1,0 +1,15 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #111;
+  color: white;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.logoContainer h1 {
+  padding: 25px;
+  font-size: 32px;
+  margin: 0;
+  color: white;
+}

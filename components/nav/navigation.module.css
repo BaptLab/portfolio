@@ -1,0 +1,73 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.anchorLinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.anchorLinks li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.externalLinks img {
+  filter: invert(
+    1
+  ); /* Inverts colors (turns black to white) */
+}
+
+.anchorLinks li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: blue;
+  transition: width 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.anchorLinks li:hover::before {
+  width: 100%;
+}
+
+.anchorLinks li a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* External links styling */
+.externalLinks {
+  display: flex;
+}
+
+/* General styles for links */
+.anchorLinks a,
+.externalLinks a {
+  display: flex;
+  font-size: 1em;
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color from parent */
+  padding: 12px;
+  font-weight: 500;
+}
+
+.anchorLinks a {
+  border-right: 1px solid white;
+}
+
+.externalLinks a {
+  border-left: 1px solid white;
+}
