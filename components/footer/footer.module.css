@@ -1,0 +1,19 @@
+.footer {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerRedirect {
+  font-family: "PPFormula";
+  text-transform: uppercase;
+  font-size: 0.7em;
+  opacity: 30%;
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+
+.footerRedirect:hover {
+  opacity: 50%;
+}

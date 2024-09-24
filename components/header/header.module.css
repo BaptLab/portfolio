@@ -1,8 +1,6 @@
 .headerContainer {
   display: flex;
   justify-content: space-between;
-  background-color: #111;
-  color: white;
   flex-direction: column;
   text-transform: uppercase;
 }

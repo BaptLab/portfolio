@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Header from "@/components/header/Header";
 import Competence from "@/components/competence/Competence";
+import Project from "@/components/project/Project";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -65,6 +67,22 @@ export default function Home() {
             />
           </div>
         </section>
+        <section id="projects">
+          <h2>[ Mes projets ]</h2>
+          <Project
+            imagePath="/images/test.png"
+            projectId="01"
+            clientName="Nom du client"
+            techUsed={["HTML", "CSS", "JS"]}
+          />
+          <Project
+            imagePath="/images/test2.jpg"
+            projectId="02"
+            clientName="Nom du client"
+            techUsed={["HTML", "CSS", "JS"]}
+          />
+        </section>
+        <Footer />
       </main>
     </>
   );

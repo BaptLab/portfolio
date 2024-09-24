@@ -1,9 +1,17 @@
 :root {
-  --background: #171717;
+  --background: #111;
   --foreground: #ffffff;
 }
 
 /* Define your custom font with different weights and styles */
+
+@font-face {
+  font-family: "PPFormula";
+  src: url("/fonts/PPFormulaLight.ttf") format("opentype");
+  font-weight: 300; /* Bold weight */
+  font-style: light;
+}
+
 @font-face {
   font-family: "PPNeuMontreal";
   src: url("/fonts/ppneuemontreal-bold.otf")
@@ -75,7 +83,8 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "PPNeuMontreal", Arial, Helvetica, sans-serif;
+  font-family: "PPNeuMontreal", "PPFormula", Arial,
+    Helvetica, sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
   -webkit-font-smoothing: antialiased;
@@ -108,9 +117,8 @@ h2 {
 }
 
 section {
-  padding: 50px 65px;
   border-bottom: 1px solid grey;
-  max-width: 1500px;
+  padding: 50px 13%;
 }
 
 .competences-container {
