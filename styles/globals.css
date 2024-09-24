@@ -113,7 +113,7 @@ h2 {
   font-size: 48px;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 section {
@@ -125,6 +125,26 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.profil-container {
+  font-size: 2em;
+  margin-bottom: 100px;
+  display: flex;
+  gap: 131px;
+  flex-direction: row-reverse;
+}
+
+.profil-container img {
+  border-radius: 21px;
+}
+
+.offres-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1500px;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,6 +3,8 @@ import Header from "@/components/header/Header";
 import Competence from "@/components/competence/Competence";
 import Project from "@/components/project/Project";
 import Footer from "@/components/footer/Footer";
+import Image from "next/image";
+import Offre from "@/components/offre/Offre";
 
 export default function Home() {
   return (
@@ -21,6 +23,42 @@ export default function Home() {
       </Head>
       <Header />
       <main>
+        <section id="profil">
+          <h2>[ A propos ]</h2>
+          <div className="profil-container">
+            <Image
+              src="/images/profil.jpg"
+              alt="Baptiste LABAUNE"
+              width={379}
+              height={230}
+            ></Image>
+            <p className="profil-description">
+              Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis{" "}
+              <strong>nostrud exercitation</strong> ullamco
+              laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in{" "}
+              <strong>reprehenderit </strong> in voluptate
+              velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia
+              deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <Competence
+            logoPath="/logos/competences.png"
+            title="Compétences"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+            competenceList={[
+              "Méthodologie agile",
+              "Conformité RGPD (master 2)",
+              "Architecture logicielle",
+              "Architecture Base de données",
+            ]}
+          />
+        </section>
         <section id="technos">
           <h2>[ Mes technologies ]</h2>
           <div className="competences-container">
@@ -67,20 +105,63 @@ export default function Home() {
             />
           </div>
         </section>
-        <section id="projects">
+        <section id="projets">
           <h2>[ Mes projets ]</h2>
           <Project
             imagePath="/images/test.png"
             projectId="01"
             clientName="Nom du client"
+            projectDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             techUsed={["HTML", "CSS", "JS"]}
           />
           <Project
             imagePath="/images/test2.jpg"
             projectId="02"
             clientName="Nom du client"
+            projectDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
             techUsed={["HTML", "CSS", "JS"]}
           />
+        </section>
+        <section id="offres">
+          <h2>[ Mes offres ]</h2>
+          <div className="offres-container">
+            <Offre
+              offreId="01"
+              offreName="Site Statique Basique"
+              offreTechnos={"[HTML, CSS, JS]"}
+              offreVersion="Maquette prédéfinie / Sur Mesure"
+              offreBackOffice="Non"
+              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
+              offrePrice="350€ - 550€"
+            />
+            <Offre
+              offreId="01"
+              offreName="Site Statique Basique"
+              offreTechnos={"[HTML, CSS, JS]"}
+              offreVersion="Maquette prédéfinie / Sur Mesure"
+              offreBackOffice="Non"
+              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
+              offrePrice="350€ - 550€"
+            />
+            <Offre
+              offreId="01"
+              offreName="Site Statique Basique"
+              offreTechnos={"[HTML, CSS, JS]"}
+              offreVersion="Maquette prédéfinie / Sur Mesure"
+              offreBackOffice="Non"
+              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
+              offrePrice="350€ - 550€"
+            />
+            <Offre
+              offreId="01"
+              offreName="Site Statique Basique"
+              offreTechnos={"[HTML, CSS, JS]"}
+              offreVersion="Maquette prédéfinie / Sur Mesure"
+              offreBackOffice="Non"
+              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
+              offrePrice="350€ - 550€"
+            />
+          </div>
         </section>
         <Footer />
       </main>

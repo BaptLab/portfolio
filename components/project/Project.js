@@ -26,6 +26,9 @@ const Project = (props) => {
         <span className={styles.clientName}>
           {props.clientName}
         </span>
+        <p className={styles.projectDescription}>
+          {props.projectDescription}
+        </p>
         <ul className={styles.techUsed}>
           {props.techUsed.map((item, index) => (
             <li key={index} className={styles.techUsedItem}>
