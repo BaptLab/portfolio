@@ -118,7 +118,8 @@ h2 {
 
 section {
   border-bottom: 1px solid grey;
-  padding: 50px 13%;
+  padding: 50px 8%;
+  width: 100%;
 }
 
 .competences-container {
@@ -140,11 +141,37 @@ section {
 }
 
 .offres-container {
+  width: 100vw;
   display: flex;
   gap: 50px;
-  max-width: 1500px;
-  overflow: hidden;
+  max-width: 100%;
   overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
+  margin-bottom: 60px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.offres-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit browsers */
+}
+
+.offre-warning {
+  font-size: 0.938em;
+  font-family: "PPFormula";
+  font-weight: 300;
+  padding: 35px;
+  border-radius: 15px;
+  border: 1px solid white;
+}
+
+.offre-warning img {
+  margin-bottom: 15px;
+}
+.nav-buttons button:hover {
+  background-color: grey;
 }
 
 @media (prefers-color-scheme: dark) {

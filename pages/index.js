@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from "next/head";
 import Header from "@/components/header/Header";
 import Competence from "@/components/competence/Competence";
@@ -108,7 +109,7 @@ export default function Home() {
         <section id="projets">
           <h2>[ Mes projets ]</h2>
           <Project
-            imagePath="/images/test.png"
+            imagePath="/images/test.jpg"
             projectId="01"
             clientName="Nom du client"
             projectDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
@@ -161,6 +162,25 @@ export default function Home() {
               offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
               offrePrice="350€ - 550€"
             />
+          </div>
+          <div className="offre-warning">
+            <Image
+              src={"/logos/warning.png"}
+              width={24}
+              height={24}
+            />
+            <p className="offre-warning-paragraphe">
+              Les prix indiqués sont donnés à titre
+              indicatif et peuvent varier en fonction de
+              plusieurs facteurs. La présence d'un
+              back-office, le choix entre un design
+              prédéfini ou sur mesure (cf. colonne Prix). La
+              complexité spécifique de votre demande peut
+              également influencer le coût final et faire
+              dépasser les prix indiqués. Chaque devis est
+              personnalisé pour s'adapter au mieux à vos
+              besoins et garantir un service de qualité.
+            </p>
           </div>
         </section>
         <Footer />

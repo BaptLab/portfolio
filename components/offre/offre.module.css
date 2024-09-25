@@ -2,12 +2,20 @@
   border-radius: 18px;
   border: 1px solid white;
   font-size: 0.938em;
-  margin-bottom: 40px;
-  font-family: "PPFormula";
+  max-width: 525px; /* Adjust as necessary */
+  flex: 0 0 auto; /* Ensures the item doesn't shrink or grow */
   min-width: 525px;
   display: flex;
   flex-direction: column;
   padding: 35px;
+  scroll-snap-align: center;
+}
+
+.offreContainer .offreName {
+  font-family: "PPNeuMontreal";
+  font-weight: 500;
+  margin-bottom: 50px;
+  font-size: 2em;
 }
 
 .offreContainer span {

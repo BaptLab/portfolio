@@ -30,6 +30,7 @@ const Offre = (props) => {
       <span className={styles.offreDescription}>
         {props.offreDescription}
       </span>
+
       <span className={styles.offreTitle}>Prix</span>
       <span className={styles.offrePrice}>
         {props.offrePrice}
