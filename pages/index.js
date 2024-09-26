@@ -5,9 +5,9 @@ import Competence from "@/components/competence/Competence";
 import Project from "@/components/project/Project";
 import Footer from "@/components/footer/Footer";
 import Image from "next/image";
-import Offre from "@/components/offre/Offre";
+import SlideCarrousel from "@/components/slideCarrousel/SlideCarrousel";
 
-export default function Home() {
+export default function Home({ offres }) {
   return (
     <>
       <Head>
@@ -125,44 +125,7 @@ export default function Home() {
         </section>
         <section id="offres">
           <h2>[ Mes offres ]</h2>
-          <div className="offres-container">
-            <Offre
-              offreId="01"
-              offreName="Site Statique Basique"
-              offreTechnos={"[HTML, CSS, JS]"}
-              offreVersion="Maquette prédéfinie / Sur Mesure"
-              offreBackOffice="Non"
-              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
-              offrePrice="350€ - 550€"
-            />
-            <Offre
-              offreId="01"
-              offreName="Site Statique Basique"
-              offreTechnos={"[HTML, CSS, JS]"}
-              offreVersion="Maquette prédéfinie / Sur Mesure"
-              offreBackOffice="Non"
-              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
-              offrePrice="350€ - 550€"
-            />
-            <Offre
-              offreId="01"
-              offreName="Site Statique Basique"
-              offreTechnos={"[HTML, CSS, JS]"}
-              offreVersion="Maquette prédéfinie / Sur Mesure"
-              offreBackOffice="Non"
-              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
-              offrePrice="350€ - 550€"
-            />
-            <Offre
-              offreId="01"
-              offreName="Site Statique Basique"
-              offreTechnos={"[HTML, CSS, JS]"}
-              offreVersion="Maquette prédéfinie / Sur Mesure"
-              offreBackOffice="Non"
-              offreDescription="Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an."
-              offrePrice="350€ - 550€"
-            />
-          </div>
+          <SlideCarrousel offres={offres} />
           <div className="offre-warning">
             <Image
               src={"/logos/warning.png"}
@@ -187,4 +150,35 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    // Use the environment variable for the base URL
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`
+    );
+
+    // Check if the response is OK
+    if (!res.ok) {
+      throw new Error(
+        `Failed to fetch data, status code: ${res.status}`
+      );
+    }
+
+    const offres = await res.json();
+
+    return {
+      props: {
+        offres,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching JSON data:", error);
+    return {
+      props: {
+        offres: [], // Return empty array in case of error
+      },
+    };
+  }
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "offreId": "01",
+    "offreName": "Site Statique Basique",
+    "offreTechnos": ["HTML", "CSS", "JS"],
+    "offreVersion": "Maquette prédéfinie / Sur Mesure",
+    "offreBackOffice": "Non",
+    "offreDescription": "Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an.",
+    "offrePrice": "350€ - 550€"
+  },
+  {
+    "offreId": "02",
+    "offreName": "Site Dynamique avec CMS",
+    "offreTechnos": ["HTML", "CSS", "JS", "WordPress"],
+    "offreVersion": "Sur Mesure",
+    "offreBackOffice": "Oui",
+    "offreDescription": "Un site dynamique développé avec WordPress, idéal pour les utilisateurs souhaitant gérer le contenu eux-mêmes via un back-office intuitif. Ce type de site permet de mettre à jour le contenu sans compétences techniques.",
+    "offrePrice": "600€ - 1000€"
+  },
+  {
+    "offreId": "02",
+    "offreName": "Site Dynamique avec CMS",
+    "offreTechnos": ["HTML", "CSS", "JS", "WordPress"],
+    "offreVersion": "Sur Mesure",
+    "offreBackOffice": "Oui",
+    "offreDescription": "Un site dynamique développé avec WordPress, idéal pour les utilisateurs souhaitant gérer le contenu eux-mêmes via un back-office intuitif. Ce type de site permet de mettre à jour le contenu sans compétences techniques.",
+    "offrePrice": "600€ - 1000€"
+  },
+  {
+    "offreId": "02",
+    "offreName": "Site Dynamique avec CMS",
+    "offreTechnos": ["HTML", "CSS", "JS", "WordPress"],
+    "offreVersion": "Sur Mesure",
+    "offreBackOffice": "Oui",
+    "offreDescription": "Un site dynamique développé avec WordPress, idéal pour les utilisateurs souhaitant gérer le contenu eux-mêmes via un back-office intuitif. Ce type de site permet de mettre à jour le contenu sans compétences techniques.",
+    "offrePrice": "600€ - 1000€"
+  }
+]
