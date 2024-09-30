@@ -1,11 +1,15 @@
+import Link from "next/link";
 import styles from "./footer.module.css";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a className={styles.footerRedirect}>
+      <Link
+        href="/legals"
+        className={styles.footerRedirect}
+      >
         Mentions Légales
-      </a>
+      </Link>
     </footer>
   );
 };

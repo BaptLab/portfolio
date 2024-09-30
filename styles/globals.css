@@ -78,6 +78,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   margin: 0px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -104,6 +105,19 @@ main {
   margin: 0;
 }
 
+button {
+  all: unset; /* Resets all styles */
+  appearance: button; /* Ensures the element behaves like a button */
+  -webkit-appearance: button; /* For better cross-browser compatibility */
+  cursor: pointer;
+  padding: inherit;
+  border: inherit;
+  background-color: inherit;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -118,7 +132,7 @@ h2 {
 
 section {
   border-bottom: 1px solid grey;
-  padding: 50px 8%;
+  padding: 80px 8%;
   width: 100%;
 }
 
@@ -147,6 +161,7 @@ section {
   padding: 25px 35px;
   border-radius: 15px;
   border: 1px solid white;
+  margin-bottom: 50px;
 }
 
 .offre-warning img {
@@ -154,6 +169,93 @@ section {
 }
 .nav-buttons button:hover {
   background-color: grey;
+}
+
+#contact-form {
+  max-width: 950px;
+}
+
+#contact-form button {
+  display: flex;
+  align-self: flex-end;
+}
+
+.small-inputs-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.small-inputs-container .input-container {
+  width: 435px;
+}
+
+.subtitle {
+  display: block;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  opacity: 80%;
+  padding-bottom: 80px;
+}
+
+/* Styling for form inputs, dropdowns, and textarea */
+.input-container input,
+.input-container select,
+.input-container textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #111;
+  border: 1px solid #ffffff;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.input-container input:focus,
+.input-container select:focus,
+.input-container textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.input-container label {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+/* Styling for select dropdown */
+.input-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("/logos/arrow.png"); /* Add custom dropdown arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  padding-right: 30px;
+}
+
+/* Styling for the textarea */
+.input-container textarea {
+  height: 150px;
+  resize: none;
+}
+
+/* Styling for the privacy checkbox */
+.checkbox-container label {
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
 }
 
 @media (prefers-color-scheme: dark) {

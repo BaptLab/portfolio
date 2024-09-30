@@ -1,5 +1,5 @@
 const Legal = () => {
-  return <></>;
+  return <>Legals page</>;
 };
 
 export default Legal;

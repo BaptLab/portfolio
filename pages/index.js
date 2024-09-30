@@ -6,6 +6,7 @@ import Project from "@/components/project/Project";
 import Footer from "@/components/footer/Footer";
 import Image from "next/image";
 import SlideCarrousel from "@/components/slideCarrousel/SlideCarrousel";
+import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 
 export default function Home({ offres }) {
   return (
@@ -125,7 +126,6 @@ export default function Home({ offres }) {
         </section>
         <section id="offres">
           <h2>[ Mes offres ]</h2>
-          <SlideCarrousel offres={offres} />
           <div className="offre-warning">
             <Image
               src={"/logos/warning.png"}
@@ -145,6 +145,11 @@ export default function Home({ offres }) {
               besoins et garantir un service de qualité.
             </p>
           </div>
+          <SlideCarrousel offres={offres} />
+          <ActionBtn
+            btnText="Je suis intéressé"
+            navTo="/contact"
+          />
         </section>
         <Footer />
       </main>
