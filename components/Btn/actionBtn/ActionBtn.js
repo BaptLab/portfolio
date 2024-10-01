@@ -4,11 +4,14 @@ import styles from "./actionBtn.module.css";
 const ActionBtn = (props) => {
   const router = useRouter();
 
-  const handleNavigation = () => {
+  const handleNavigation = (e) => {
+    if (props.buttonType !== "submit") {
+      e.preventDefault();
+    }
     if (props.navTo) {
       router.push(props.navTo);
     } else if (props.onClickFunction) {
-      props.onClickFunction();
+      props.onClickFunction(e);
     }
   };
 
@@ -26,7 +29,7 @@ const ActionBtn = (props) => {
       <button
         onClick={handleNavigation}
         className={styles.actionBtn}
-        type="button"
+        type={props.buttonType || "button"}
       >
         {props.btnText}
       </button>

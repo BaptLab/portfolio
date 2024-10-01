@@ -2,6 +2,7 @@ import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { useState } from "react";
+import emailjs from "emailjs-com"; // Import emailjs
 
 export default function Contact() {
   // State variables to hold form data
@@ -11,23 +12,59 @@ export default function Contact() {
   const [website, setWebsite] = useState("");
   const [offer, setOffer] = useState("");
   const [identity, setIdentity] = useState("");
+  const [email, setEmail] = useState("");
   const [projectDescription, setProjectDescription] =
     useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const [messageType, setMessageType] = useState(""); // For success/error messages
+
+  const cleanForm = () => {
+    setName("");
+    setSurname("");
+    setPhone("");
+    setWebsite("");
+    setOffer("");
+    setIdentity("");
+    setProjectDescription("");
+    setEmail("");
+    setIsChecked(false);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log({
-      name,
-      surname,
-      phone,
-      website,
-      offer,
-      identity,
-      projectDescription,
-      isChecked,
-    });
+
+    // Data object for EmailJS
+    const templateParams = {
+      name: name,
+      surname: surname,
+      phone: phone,
+      website: website,
+      offer: offer,
+      identity: identity,
+      projectDescription: projectDescription,
+      email: email,
+    };
+
+    emailjs
+      .send(
+        "service_w1km3j9", // Your service ID
+        "template_3c9gkto", // Your template ID
+        templateParams,
+        "D8y3pdc18mEveJ6es" // Your public key
+      )
+      .then((response) => {
+        console.log(
+          "SUCCESS!",
+          response.status,
+          response.text
+        );
+        setMessageType("success"); // Set message type to success
+        cleanForm(); // Clear form after success
+      })
+      .catch((error) => {
+        console.error("FAILED...", error);
+        setMessageType("error"); // Set message type to error
+      });
   };
 
   return (
@@ -39,6 +76,20 @@ export default function Contact() {
           <span className="subtitle">
             baptiste.labaune@gmail.com
           </span>
+          {messageType === "success" && (
+            <span id="success-msg">
+              Votre message a bien été envoyé !
+            </span>
+          )}
+          {messageType === "error" && (
+            <span id="error-msg">
+              Il y'a eu une erreur lors de l'envoi du
+              message.
+              <br />
+              <br />
+              Contactez directement truepeak.prod@gmail.com
+            </span>
+          )}
           <form id="contact-form" onSubmit={handleSubmit}>
             <div className="small-inputs-container">
               {/* Name input */}
@@ -78,13 +129,27 @@ export default function Contact() {
                 id="phone-input-container"
                 className="input-container"
               >
-                <label htmlFor="phone">Téléphone *</label>
+                <label htmlFor="phone">Téléphone</label>
                 <input
                   type="tel"
                   id="phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+33"
+                />
+              </div>
+              {/* Email input */}
+              <div
+                id="email-input-container"
+                className="input-container"
+              >
+                <label htmlFor="email">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="jean.dupont@gmail.com"
                   required
                 />
               </div>
@@ -94,7 +159,7 @@ export default function Contact() {
                 className="input-container"
               >
                 <label htmlFor="website">
-                  Site internet *
+                  Site internet
                 </label>
                 <input
                   type="url"
@@ -104,9 +169,9 @@ export default function Contact() {
                     setWebsite(e.target.value)
                   }
                   placeholder="URL"
-                  required
                 />
               </div>
+              {/* Offer input */}
               <div
                 id="offer-input-container"
                 className="input-container"
@@ -121,9 +186,9 @@ export default function Contact() {
                   <option value="">Sélection</option>
                   <option value="Option 1">Option 1</option>
                   <option value="Option 2">Option 2</option>
-                  {/* Add more options as needed */}
                 </select>
               </div>
+              {/* Identity input */}
               <div
                 id="identity-input-container"
                 className="input-container"
@@ -155,7 +220,7 @@ export default function Contact() {
               className="input-container"
             >
               <label htmlFor="projectDescription">
-                Description du projet
+                Description du projet *
               </label>
               <textarea
                 id="projectDescription"
@@ -165,6 +230,7 @@ export default function Contact() {
                 }
                 placeholder="Message..."
                 rows="5"
+                required
               />
             </div>
 
@@ -188,8 +254,8 @@ export default function Contact() {
 
             <ActionBtn
               btnText="Envoyer"
-              onClickFunction={handleSubmit}
               align="right"
+              buttonType="submit" // Use buttonType prop to set "submit"
             />
           </form>
         </section>

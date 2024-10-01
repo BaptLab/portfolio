@@ -258,6 +258,20 @@ section {
   margin-right: 10px;
 }
 
+#message {
+  height: 160px;
+  width: 100%;
+}
+#success-msg,
+#error-msg {
+  font-size: 1.2em;
+  font-weight: "PPFormula";
+  margin-bottom: 50px;
+  max-width: 100%;
+  display: block;
+  align-self: center;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
