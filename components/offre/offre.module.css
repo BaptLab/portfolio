@@ -32,3 +32,7 @@
   margin-bottom: 12px;
   font-family: "PPNeuMontreal";
 }
+
+.offreContainer .offreTitlePrice {
+  margin-top: auto;
+}

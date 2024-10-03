@@ -72,192 +72,208 @@ export default function Contact() {
       <Header />
       <main>
         <section id="contact">
-          <h2>[ Collaborons ensemble ]</h2>
-          <span className="subtitle">
-            baptiste.labaune@gmail.com
-          </span>
-          {messageType === "success" && (
-            <span id="success-msg">
-              Votre message a bien été envoyé !
+          <div className="section-container">
+            <h2>[ Collaborons ensemble ]</h2>
+            <span className="subtitle">
+              baptiste.labaune@gmail.com
             </span>
-          )}
-          {messageType === "error" && (
-            <span id="error-msg">
-              Il y'a eu une erreur lors de l'envoi du
-              message.
-              <br />
-              <br />
-              Contactez directement truepeak.prod@gmail.com
-            </span>
-          )}
-          <form id="contact-form" onSubmit={handleSubmit}>
-            <div className="small-inputs-container">
-              {/* Name input */}
-              <div
-                id="name-input-container"
-                className="input-container"
-              >
-                <label htmlFor="name">Nom *</label>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="DUPONT"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
-              {/* Surname input */}
-              <div
-                id="surname-input-container"
-                className="input-container"
-              >
-                <label htmlFor="surname">Prénom *</label>
-                <input
-                  type="text"
-                  placeholder="Jean"
-                  id="surname"
-                  value={surname}
-                  onChange={(e) =>
-                    setSurname(e.target.value)
-                  }
-                  required
-                />
-              </div>
-              {/* Phone input */}
-              <div
-                id="phone-input-container"
-                className="input-container"
-              >
-                <label htmlFor="phone">Téléphone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+33"
-                />
-              </div>
-              {/* Email input */}
-              <div
-                id="email-input-container"
-                className="input-container"
-              >
-                <label htmlFor="email">Email *</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="jean.dupont@gmail.com"
-                  required
-                />
-              </div>
-              {/* Website input */}
-              <div
-                id="website-input-container"
-                className="input-container"
-              >
-                <label htmlFor="website">
-                  Site internet
-                </label>
-                <input
-                  type="url"
-                  id="website"
-                  value={website}
-                  onChange={(e) =>
-                    setWebsite(e.target.value)
-                  }
-                  placeholder="URL"
-                />
-              </div>
-              {/* Offer input */}
-              <div
-                id="offer-input-container"
-                className="input-container"
-              >
-                <label htmlFor="offer">Offres *</label>
-                <select
-                  id="offer"
-                  value={offer}
-                  onChange={(e) => setOffer(e.target.value)}
-                  required
+            {messageType === "success" && (
+              <span id="success-msg">
+                Votre message a bien été envoyé !
+              </span>
+            )}
+            {messageType === "error" && (
+              <span id="error-msg">
+                Il y'a eu une erreur lors de l'envoi du
+                message.
+                <br />
+                <br />
+                Contactez directement
+                truepeak.prod@gmail.com
+              </span>
+            )}
+            <form id="contact-form" onSubmit={handleSubmit}>
+              <div className="small-inputs-container">
+                {/* Name input */}
+                <div
+                  id="name-input-container"
+                  className="input-container"
                 >
-                  <option value="">Sélection</option>
-                  <option value="Option 1">Option 1</option>
-                  <option value="Option 2">Option 2</option>
-                </select>
-              </div>
-              {/* Identity input */}
-              <div
-                id="identity-input-container"
-                className="input-container"
-              >
-                <label htmlFor="identity">
-                  Identité du demandeur *
-                </label>
-                <select
-                  id="identity"
-                  value={identity}
-                  onChange={(e) =>
-                    setIdentity(e.target.value)
-                  }
-                  required
+                  <label htmlFor="name">Nom *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="DUPONT"
+                    value={name}
+                    onChange={(e) =>
+                      setName(e.target.value)
+                    }
+                    required
+                  />
+                </div>
+                {/* Surname input */}
+                <div
+                  id="surname-input-container"
+                  className="input-container"
                 >
-                  <option value="">Sélection</option>
-                  <option value="Entreprise">
-                    Entreprise
-                  </option>
-                  <option value="Particulier">
-                    Particulier
-                  </option>
-                </select>
+                  <label htmlFor="surname">Prénom *</label>
+                  <input
+                    type="text"
+                    placeholder="Jean"
+                    id="surname"
+                    value={surname}
+                    onChange={(e) =>
+                      setSurname(e.target.value)
+                    }
+                    required
+                  />
+                </div>
+                {/* Phone input */}
+                <div
+                  id="phone-input-container"
+                  className="input-container"
+                >
+                  <label htmlFor="phone">Téléphone</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    value={phone}
+                    onChange={(e) =>
+                      setPhone(e.target.value)
+                    }
+                    placeholder="+33"
+                  />
+                </div>
+                {/* Email input */}
+                <div
+                  id="email-input-container"
+                  className="input-container"
+                >
+                  <label htmlFor="email">Email *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) =>
+                      setEmail(e.target.value)
+                    }
+                    placeholder="jean.dupont@gmail.com"
+                    required
+                  />
+                </div>
+                {/* Website input */}
+                <div
+                  id="website-input-container"
+                  className="input-container"
+                >
+                  <label htmlFor="website">
+                    Site internet
+                  </label>
+                  <input
+                    type="url"
+                    id="website"
+                    value={website}
+                    onChange={(e) =>
+                      setWebsite(e.target.value)
+                    }
+                    placeholder="URL"
+                  />
+                </div>
+                {/* Offer input */}
+                <div
+                  id="offer-input-container"
+                  className="input-container"
+                >
+                  <label htmlFor="offer">Offres *</label>
+                  <select
+                    id="offer"
+                    value={offer}
+                    onChange={(e) =>
+                      setOffer(e.target.value)
+                    }
+                    required
+                  >
+                    <option value="">Sélection</option>
+                    <option value="Option 1">
+                      Option 1
+                    </option>
+                    <option value="Option 2">
+                      Option 2
+                    </option>
+                  </select>
+                </div>
+                {/* Identity input */}
+                <div
+                  id="identity-input-container"
+                  className="input-container"
+                >
+                  <label htmlFor="identity">
+                    Identité du demandeur *
+                  </label>
+                  <select
+                    id="identity"
+                    value={identity}
+                    onChange={(e) =>
+                      setIdentity(e.target.value)
+                    }
+                    required
+                  >
+                    <option value="">Sélection</option>
+                    <option value="Entreprise">
+                      Entreprise
+                    </option>
+                    <option value="Particulier">
+                      Particulier
+                    </option>
+                  </select>
+                </div>
               </div>
-            </div>
 
-            <div
-              id="project-description-input-container"
-              className="input-container"
-            >
-              <label htmlFor="projectDescription">
-                Description du projet *
-              </label>
-              <textarea
-                id="projectDescription"
-                value={projectDescription}
-                onChange={(e) =>
-                  setProjectDescription(e.target.value)
-                }
-                placeholder="Message..."
-                rows="5"
-                required
+              <div
+                id="project-description-input-container"
+                className="input-container"
+              >
+                <label htmlFor="projectDescription">
+                  Description du projet *
+                </label>
+                <textarea
+                  id="projectDescription"
+                  value={projectDescription}
+                  onChange={(e) =>
+                    setProjectDescription(e.target.value)
+                  }
+                  placeholder="Message..."
+                  rows="5"
+                  required
+                />
+              </div>
+
+              {/* Privacy checkbox */}
+              <div className="checkbox-container">
+                <label>
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={(e) =>
+                      setIsChecked(e.target.checked)
+                    }
+                    required
+                  />
+                  Conformément à la réglementation en
+                  matière de données à caractère personnel,
+                  nous vous informons que les informations
+                  recueillies vous concernant sont
+                  collectées...
+                </label>
+              </div>
+
+              <ActionBtn
+                btnText="Envoyer"
+                align="right"
+                buttonType="submit" // Use buttonType prop to set "submit"
               />
-            </div>
-
-            {/* Privacy checkbox */}
-            <div className="checkbox-container">
-              <label>
-                <input
-                  type="checkbox"
-                  checked={isChecked}
-                  onChange={(e) =>
-                    setIsChecked(e.target.checked)
-                  }
-                  required
-                />
-                Conformément à la réglementation en matière
-                de données à caractère personnel, nous vous
-                informons que les informations recueillies
-                vous concernant sont collectées...
-              </label>
-            </div>
-
-            <ActionBtn
-              btnText="Envoyer"
-              align="right"
-              buttonType="submit" // Use buttonType prop to set "submit"
-            />
-          </form>
+            </form>
+          </div>
         </section>
       </main>
       <Footer />

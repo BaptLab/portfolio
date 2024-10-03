@@ -31,7 +31,11 @@ const Offre = (props) => {
         {props.offreDescription}
       </span>
 
-      <span className={styles.offreTitle}>Prix</span>
+      <span
+        className={`${styles.offreTitle} ${styles.offreTitlePrice}`}
+      >
+        Prix
+      </span>
       <span className={styles.offrePrice}>
         {props.offrePrice}
       </span>
