@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[369],{2752:function(n,u,_){(window.__NEXT_P=window.__NEXT_P||[]).push(["/legals",function(){return _(1752)}])},1752:function(n,u,_){"use strict";_.r(u);var t=_(5893);u.default=()=>(0,t.jsx)(t.Fragment,{})}},function(n){n.O(0,[888,774,179],function(){return n(n.s=2752)}),_N_E=n.O()}]);

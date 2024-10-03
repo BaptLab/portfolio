@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[369],{2752:function(n,e,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/legals",function(){return u(1752)}])},1752:function(n,e,u){"use strict";u.r(e);var _=u(5893);e.default=()=>(0,_.jsx)(_.Fragment,{children:"Legals page"})}},function(n){n.O(0,[888,774,179],function(){return n(n.s=2752)}),_N_E=n.O()}]);
