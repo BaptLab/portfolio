@@ -7,16 +7,16 @@ const Navigation = () => {
     <nav className={styles.navBar}>
       <ul className={styles.anchorLinks}>
         <li>
-          <a href="#profil">Profil</a>
+          <Link href="/#profil">Profil</Link>
         </li>
         <li>
-          <a href="#technos">Technologies</a>
+          <Link href="/#technos">Technologies</Link>
         </li>
         <li>
-          <a href="#projets">Projets</a>
+          <Link href="/#projets">Projets</Link>
         </li>
         <li>
-          <a href="#offres">Offres</a>
+          <Link href="/#offres">Offres</Link>
         </li>
       </ul>
 
