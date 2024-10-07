@@ -2,15 +2,26 @@ import styles from "./nextandbackbtn.module.css";
 
 const NextAndBackBtn = (props) => {
   return (
-    <div className={styles.btnContainer}>
+    <>
       {props.direction === "back" && (
-        <span className={styles.arrowBack}>[←]</span>
+        <div
+          className={`${styles.btnContainer} ${styles.back}`}
+        >
+          <span className={styles.arrowBack}>
+            [←] {props.btnTxt}
+          </span>
+        </div>
       )}
-      <span className={styles.btnText}>{props.btnTxt}</span>
       {props.direction === "next" && (
-        <span className={styles.arrowNext}>[→]</span>
+        <div
+          className={`${styles.btnContainer} ${styles.next}`}
+        >
+          <span className={styles.arrowNext}>
+            {props.btnTxt} [→]
+          </span>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

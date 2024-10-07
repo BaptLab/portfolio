@@ -84,12 +84,12 @@ export default function Contact() {
             )}
             {messageType === "error" && (
               <span id="error-msg">
-                Il y'a eu une erreur lors de l'envoi du
-                message.
+                Il y&#39;a eu une erreur lors de l&#39;envoi
+                du message.
                 <br />
                 <br />
                 Contactez directement
-                truepeak.prod@gmail.com
+                baptiste.labaune@gmail.com{" "}
               </span>
             )}
             <form id="contact-form" onSubmit={handleSubmit}>

@@ -272,11 +272,79 @@ section {
 #success-msg,
 #error-msg {
   font-size: 1.2em;
-  font-weight: "PPFormula";
+  font-family: "PPFormula";
   margin-bottom: 50px;
   max-width: 100%;
   display: block;
   align-self: center;
+}
+
+.legal-title {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: "PPNeuMontreal";
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.legal-section {
+  margin-bottom: 45px;
+}
+
+.legal-content {
+  font-family: "PPFormula";
+  font-size: 0.925em;
+  opacity: 80%;
+}
+
+#project .project-title {
+  font-weight: 300;
+  font-family: "PPNeuMontreal";
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+#project .project-info {
+  justify-content: space-between;
+  display: flex;
+}
+
+#project p {
+  font-family: "PPFormula";
+  font-size: 0.938em;
+  opacity: 80%;
+}
+
+#project .project-live-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 60px;
+}
+
+#project a {
+  font-family: "PPFormula";
+  font-size: 0.938em;
+}
+
+#project .project-technologies-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 65px;
+}
+
+#project .project-pictures {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-container {
+  margin-bottom: 45px;
+}
+#project img {
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

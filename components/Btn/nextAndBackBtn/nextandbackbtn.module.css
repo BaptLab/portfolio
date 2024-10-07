@@ -2,6 +2,8 @@
   text-transform: uppercase;
   font-size: 0.938em;
   font-family: "PPFormula";
+  display: flex;
+  cursor: pointer;
 }
 
 .btnText {
@@ -10,10 +12,12 @@
   font-family: "PPFormula";
 }
 
-.arrowBack {
-  margin-right: 10px;
+.next {
+  justify-content: end;
+  display: flex;
 }
 
-.arrowNext {
-  margin-left: 10px;
+.back {
+  justify-content: start;
+  display: flex;
 }

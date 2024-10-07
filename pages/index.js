@@ -50,17 +50,6 @@ export default function Home({ offres }) {
                 deserunt mollit anim id est laborum.
               </p>
             </div>
-            <Competence
-              logoPath="/logos/competences.png"
-              title="Compétences"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-              competenceList={[
-                "Méthodologie agile",
-                "Conformité RGPD (master 2)",
-                "Architecture logicielle",
-                "Architecture Base de données",
-              ]}
-            />
           </div>
         </section>
         <section id="technos">
@@ -79,6 +68,8 @@ export default function Home({ offres }) {
                   "Angular",
                   "React",
                   "Next.js",
+                  "Jest",
+                  "Cypress",
                 ]}
               />
               <Competence
@@ -89,16 +80,18 @@ export default function Home({ offres }) {
                   "Java",
                   "SpringBoot (security, starter web, data JPA, etc.)",
                   "MongoDB & MySQL",
+                  "JUnit",
                 ]}
               />
               <Competence
                 logoPath="/logos/testing.png"
-                title="Testing"
+                title="Connaissances"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
                 competenceList={[
-                  "Cypress",
-                  "JUnit",
-                  "Jest",
+                  "Méthodologie agile",
+                  "Conformité RGPD (master 2)",
+                  "Architecture logicielle",
+                  "Architecture Base de données",
                 ]}
               />
               <Competence
@@ -172,12 +165,12 @@ export default function Home({ offres }) {
 
 export async function getStaticProps() {
   try {
-    // Use the environment variable for the base URL
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`
-    );
+    // Log the URL being accessed
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`;
+    console.log("Fetching data from:", url);
 
-    // Check if the response is OK
+    const res = await fetch(url);
+
     if (!res.ok) {
       throw new Error(
         `Failed to fetch data, status code: ${res.status}`
@@ -200,3 +193,21 @@ export async function getStaticProps() {
     };
   }
 }
+
+/* export async function getStaticPaths() {
+  // Assuming you have an endpoint or a list of all project IDs
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projects.json`
+  );
+  const projects = await res.json();
+
+  const paths = projects.map((project) => ({
+    params: { projectId: project.id.toString() }, // Ensure projectId is a string
+  }));
+
+  return {
+    paths,
+    fallback: true, // Enable fallback mode if there are more projects added later
+  };
+}
+ */
