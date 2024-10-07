@@ -25,6 +25,9 @@ jobs:
       - name: Build Project
         run: npm run build # Run the Next.js build command
 
+      - name: Start Project
+        run: npm run start # Run the Next.js build server
+
       - name: Upload to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
