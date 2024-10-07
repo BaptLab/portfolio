@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Use Node.js version specified in your project
+          node-version: "18" # Update to Node.js 18, compatible with Next.js 14.2.12
 
       - name: Install Dependencies
         run: npm install
