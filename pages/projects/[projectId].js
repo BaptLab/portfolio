@@ -15,7 +15,7 @@ const ProjectPage = () => {
     technologies: ["WEBDESIGN", "WEBFLOW", "ANIMATION"],
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    liveSite: "https://example.com",
+    liveSite: "https://truepeakproductions.com",
     images: [
       "/images/projets/truepeak/TruePeak_1.PNG",
       "/images/projets/truepeak/TruePeak_2.PNG",
