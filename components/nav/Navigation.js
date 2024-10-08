@@ -7,10 +7,10 @@ const Navigation = () => {
     <nav className={styles.navBar}>
       <ul className={styles.anchorLinks}>
         <li>
-          <Link href="/#profil">Profil</Link>
+          <Link href="/#profil">Qui suis-je ?</Link>
         </li>
         <li>
-          <Link href="/#technos">Technologies</Link>
+          <Link href="/#technos">compétences</Link>
         </li>
         <li>
           <Link href="/#projets">Projets</Link>

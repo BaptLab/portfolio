@@ -48,6 +48,30 @@
   text-decoration: none;
 }
 
+.externalLinks a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: blue;
+  transition: width 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.externalLinks a:hover::before {
+  width: 100%;
+}
+
+.externalLinks a {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 /* External links styling */
 .externalLinks {
   display: flex;

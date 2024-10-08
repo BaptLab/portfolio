@@ -7,8 +7,9 @@ const Footer = () => {
       <Link
         href="/legals"
         className={styles.footerRedirect}
+        data-new-text="Mentions légales"
       >
-        Mentions Légales
+        <span>Mentions Légales</span>
       </Link>
     </footer>
   );

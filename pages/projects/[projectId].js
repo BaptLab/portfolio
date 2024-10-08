@@ -1,4 +1,5 @@
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
+import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
 import NextAndBackBtn from "@/components/Btn/nextAndBackBtn/NextAndBackBtn";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
@@ -70,10 +71,12 @@ const ProjectPage = () => {
                 href={project.liveSite}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-new-text="VOIR LE SITE LIVE [⇗]" /* The new text you want on hover */
               >
                 VOIR LE SITE LIVE [⇗]
               </a>
             </div>
+
             <div className="project-pictures project-container">
               {project.images.map((imageSrc, index) => (
                 <Image
@@ -97,6 +100,7 @@ const ProjectPage = () => {
         </section>
       </main>
       <Footer />
+      <GoingUpBtn />
     </>
   );
 };

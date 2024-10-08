@@ -3,6 +3,7 @@ import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { useState } from "react";
 import emailjs from "emailjs-com"; // Import emailjs
+import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
 
 export default function Contact() {
   // State variables to hold form data
@@ -277,6 +278,7 @@ export default function Contact() {
         </section>
       </main>
       <Footer />
+      <GoingUpBtn />
     </>
   );
 }

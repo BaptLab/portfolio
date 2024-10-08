@@ -4,6 +4,31 @@
   text-transform: uppercase;
   padding: 15px 12px;
   border: 1px solid white;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden; /* Hide the overflow during animation */
+  cursor: pointer;
+  z-index: 1; /* Ensure the text is above the background */
+}
+
+.actionBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: blue;
+  transition: width 0.4s ease-in-out;
+  z-index: -1; /* Keep the background behind the text */
+}
+
+.actionBtn:hover::before {
+  width: 100%; /* Fill the button with blue background on hover */
+}
+
+.actionBtn:hover {
+  color: white; /* Change the text color if needed */
 }
 
 .alignLeft {

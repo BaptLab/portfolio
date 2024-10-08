@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import Image from "next/image";
 import SlideCarrousel from "@/components/slideCarrousel/SlideCarrousel";
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
+import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
 
 export default function Home({ offres }) {
   return (
@@ -27,7 +28,7 @@ export default function Home({ offres }) {
       <main>
         <section id="profil">
           <div className="section-container">
-            <h2>[ A propos ]</h2>
+            <h2>[ Qui suis-je ? ]</h2>
             <div className="profil-container">
               <Image
                 src="/images/profil.jpg"
@@ -54,7 +55,7 @@ export default function Home({ offres }) {
         </section>
         <section id="technos">
           <div className="section-container">
-            <h2>[ Mes technologies ]</h2>
+            <h2>[ Mes compétences ]</h2>
             <div className="competences-container">
               <Competence
                 logoPath="/logos/frontend.png"
@@ -89,6 +90,7 @@ export default function Home({ offres }) {
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
                 competenceList={[
                   "Méthodologie agile",
+                  "Démarche CI/CD",
                   "Conformité RGPD (master 2)",
                   "Architecture logicielle",
                   "Architecture Base de données",
@@ -130,6 +132,8 @@ export default function Home({ offres }) {
         <section id="offres">
           <div className="section-container">
             <h2>[ Mes offres ]</h2>
+
+            <SlideCarrousel offres={offres} />
             <div className="offre-warning">
               <Image
                 src={"/logos/warning.png"}
@@ -150,7 +154,6 @@ export default function Home({ offres }) {
                 de qualité.
               </p>
             </div>
-            <SlideCarrousel offres={offres} />
             <ActionBtn
               btnText="Je suis intéressé"
               navTo="/contact"
@@ -159,6 +162,7 @@ export default function Home({ offres }) {
         </section>
         <Footer />
       </main>
+      <GoingUpBtn />
     </>
   );
 }

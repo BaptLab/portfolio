@@ -1,3 +1,4 @@
+import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 
@@ -124,6 +125,7 @@ const Legal = () => {
         </section>
       </main>
       <Footer />
+      <GoingUpBtn />
     </>
   );
 };

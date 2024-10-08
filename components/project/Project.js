@@ -37,13 +37,16 @@ const Project = (props) => {
           ))}
         </ul>
       </div>
-      <a
-        href="#"
-        onClick={navigateToProject}
-        className={styles.projectCTA}
-      >
-        Voir le projet [↗]
-      </a>
+      <div className={styles.projectCTAContainer}>
+        <a
+          href="#"
+          onClick={navigateToProject}
+          className={styles.projectCTA}
+          data-new-text="Voir le projet [↗]" /* The new text to display on hover */
+        >
+          Voir le projet [↗]
+        </a>
+      </div>
     </div>
   );
 };

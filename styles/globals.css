@@ -315,11 +315,48 @@ section {
   opacity: 80%;
 }
 
-#project .project-live-link {
+.project-live-link {
   display: flex;
   justify-content: flex-end;
   margin-top: 60px;
-  font-style: 400;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden; /* Hide the text moving outside the bounds */
+}
+
+.project-live-link a {
+  display: inline-block;
+  position: relative;
+  font-size: 1em;
+  text-decoration: none;
+  transition: transform 0.2s ease-out; /* Smooth transition for text movement */
+}
+
+.project-live-link a:hover {
+  transform: translateY(
+    -100%
+  ); /* Move the original text up on hover */
+}
+
+.project-live-link a::before {
+  content: attr(
+    data-new-text
+  ); /* Use the text from data-new-text attribute */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align text to the right */
+  transition: transform 0.2s ease-out;
+}
+
+.project-live-link a:hover::before {
+  transform: translateY(
+    0
+  ); /* Bring the new text up on hover */
 }
 
 #project a {

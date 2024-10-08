@@ -1,15 +1,44 @@
 .btnContainer {
+  position: relative;
   text-transform: uppercase;
   font-size: 0.938em;
   font-family: "PPFormula";
   display: flex;
   cursor: pointer;
+  overflow: hidden; /* To hide text moving out of bounds */
 }
 
-.btnText {
-  text-transform: uppercase;
-  font-size: 0.938em;
-  font-family: "PPFormula";
+.btnContainer span {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.2s ease-out; /* Smooth transition for the text movement */
+}
+
+.btnContainer:hover span {
+  transform: translateY(
+    -100%
+  ); /* Move the original text up on hover */
+}
+
+.btnContainer::before {
+  content: attr(
+    data-text
+  ); /* Dynamically inject the new text using data attribute */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 0.2s ease-out; /* Smooth transition for the new text */
+}
+
+.btnContainer:hover::before {
+  transform: translateY(
+    -100%
+  ); /* Bring the new text up on hover */
 }
 
 .next {
