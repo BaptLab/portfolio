@@ -13,15 +13,24 @@ const Offre = (props) => {
         Technologies
       </span>
       <span className={styles.offreTechnos}>
-        {props.offreTechnos}
+        [{" "}
+        {props.offreTechnos.map((techno, index) => (
+          <span key={index}>
+            {techno}
+            {index < props.offreTechnos.length - 1 && ", "}
+          </span>
+        ))}{" "}
+        ]
       </span>
 
-      <span className={styles.offreTitle}>Version</span>
+      <span className={styles.offreTitle}>Design</span>
       <span className={styles.offreVersion}>
         {props.offreVersion}
       </span>
 
-      <span className={styles.offreTitle}>Back-Office</span>
+      <span className={styles.offreTitle}>
+        Option Back-Office ?
+      </span>
       <span className={styles.offreBackOffice}>
         {props.offreBackOffice}
       </span>

@@ -169,6 +169,7 @@ section {
   border-radius: 15px;
   border: 1px solid white;
   margin-bottom: 50px;
+  opacity: 60%;
 }
 
 .offre-warning img {
