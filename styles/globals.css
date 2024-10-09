@@ -124,7 +124,7 @@ a {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 3em;
   font-weight: 500;
   text-transform: uppercase;
   margin-bottom: 70px;
@@ -400,5 +400,44 @@ section {
   .profil-container img {
     object-fit: cover;
     height: 379px;
+  }
+}
+
+@media only screen and (max-width: 1335px) {
+  .profil-container {
+    flex-direction: column;
+  }
+
+  .profil-container img {
+    object-fit: cover;
+    height: 379px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    font-size: 12px;
+  }
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  section {
+    padding: 30px 5%;
+  }
+
+  .section-container {
+    max-width: 420px;
+  }
+
+  .profil-container {
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  .profil-container img {
+    object-fit: cover;
+    width: auto;
   }
 }
