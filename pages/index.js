@@ -31,7 +31,7 @@ export default function Home({ offres }) {
             <h2>[ Qui suis-je ? ]</h2>
             <div className="profil-container">
               <Image
-                src="/images/profil.jpg"
+                src="/images/profil.JPG"
                 alt="Baptiste LABAUNE"
                 width={379}
                 height={230}
