@@ -403,17 +403,6 @@ section {
   }
 }
 
-@media only screen and (max-width: 1335px) {
-  .profil-container {
-    flex-direction: column;
-  }
-
-  .profil-container img {
-    object-fit: cover;
-    height: 379px;
-  }
-}
-
 @media only screen and (max-width: 480px) {
   :root {
     font-size: 12px;
@@ -428,7 +417,8 @@ section {
   }
 
   .section-container {
-    max-width: 420px;
+    max-width: 400px;
+    min-width: 250px;
   }
 
   .profil-container {
@@ -438,6 +428,7 @@ section {
   }
   .profil-container img {
     object-fit: cover;
+    height: 200px;
     width: auto;
   }
 }
