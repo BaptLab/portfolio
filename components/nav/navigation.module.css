@@ -95,3 +95,24 @@
 .externalLinks a {
   border-left: 1px solid white;
 }
+
+@media only screen and (max-width: 480px) {
+  .navBar {
+    flex-direction: column;
+    border: inherit;
+    border-top: 1px solid white;
+  }
+  .navBar a {
+    border: inherit;
+    border-bottom: 1px solid white;
+  }
+
+  .navBar .anchorLinks {
+    flex-direction: column;
+    border: inherit;
+  }
+
+  .navBar .externalLinks {
+    flex-direction: column;
+  }
+}
