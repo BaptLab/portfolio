@@ -179,36 +179,6 @@ export default function Home({ offres, projects }) {
   );
 }
 
-/* export async function getStaticProps() {
-  try {
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`;
-    console.log("Fetching data from:", url);
-
-    const res = await fetch(url);
-
-    if (!res.ok) {
-      throw new Error(
-        `Failed to fetch data, status code: ${res.status}`
-      );
-    }
-
-    const offres = await res.json();
-
-    return {
-      props: {
-        offres,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching JSON data:", error);
-    return {
-      props: {
-        offres: [], // Return empty array in case of error
-      },
-    };
-  }
-} */
-
 export async function getStaticProps() {
   try {
     const offresUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`;

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
 import NextAndBackBtn from "@/components/Btn/nextAndBackBtn/NextAndBackBtn";
@@ -6,16 +7,50 @@ import Header from "@/components/header/Header";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-const ProjectPage = ({ project }) => {
+const ProjectPage = () => {
   const router = useRouter();
+  const { projectId } = router.query; // Get projectId from URL
+  const [project, setProject] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // If the page is still generating on the server or fallback mode is enabled
-  if (router.isFallback) {
+  useEffect(() => {
+    if (projectId) {
+      const fetchProject = async () => {
+        try {
+          const res = await fetch(
+            `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+          );
+          const projects = await res.json();
+          const foundProject = projects.find(
+            (proj) => proj.id === projectId
+          );
+          if (foundProject) {
+            setProject(foundProject);
+          } else {
+            setProject(null); // Handle if no project is found
+          }
+        } catch (error) {
+          console.error(
+            "Error fetching project data:",
+            error
+          );
+          setProject(null);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchProject();
+    }
+  }, [projectId]);
+
+  // Show loading spinner while the project data is being fetched
+  if (loading) {
     return <div>Loading...</div>;
   }
 
   // If no project data is available
-  if (!project || Object.keys(project).length === 0) {
+  if (!project) {
     return <div>Project not found</div>;
   }
 
@@ -95,58 +130,3 @@ const ProjectPage = ({ project }) => {
 };
 
 export default ProjectPage;
-
-export async function getStaticPaths() {
-  // Fetch the local JSON file with all the projects from the public folder
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
-  );
-  const projects = await res.json();
-
-  // Generate static paths for all projects
-  const paths = projects.map((project) => ({
-    params: { projectId: project.id },
-  }));
-
-  return {
-    paths,
-    fallback: false, // Pre-generate all project pages at build time
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const { projectId } = params;
-
-  try {
-    // Fetch the local JSON file with all the projects from the public folder
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
-    );
-    const projects = await res.json();
-
-    // Find the project that matches the projectId from the URL
-    const project = projects.find(
-      (proj) => proj.id === projectId
-    );
-
-    // If the project is not found, return a 404
-    if (!project) {
-      return {
-        notFound: true, // This will trigger a 404 page
-      };
-    }
-
-    return {
-      props: {
-        project,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching project data:", error);
-    return {
-      props: {
-        project: {},
-      },
-    };
-  }
-}
