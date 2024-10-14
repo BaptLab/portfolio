@@ -96,8 +96,10 @@ const ProjectPage = ({ project }) => {
 
 export default ProjectPage;
 export async function getStaticPaths() {
-  // Fetch the local JSON file with all the projects from the public folder
-  const res = await fetch("/data/projets.json");
+  // Fetch the local JSON file with all the projects from the public folder during build
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+  );
   const projects = await res.json();
 
   // Generate static paths for all projects
@@ -107,7 +109,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // Pre-generate all project pages at build time
+    fallback: "blocking", // Dynamically generate missing pages on request
   };
 }
 
@@ -115,8 +117,11 @@ export async function getStaticProps({ params }) {
   const { projectId } = params;
 
   try {
-    // Fetch the local JSON file with all the projects from the public folder
-    const res = await fetch("/data/projets.json");
+    // Fetch data dynamically during runtime or from the environment variable
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`;
+
+    // Check if we are running server-side or during the build process
+    const res = await fetch(url);
     const projects = await res.json();
 
     // Find the project that matches the projectId from the URL
@@ -140,7 +145,7 @@ export async function getStaticProps({ params }) {
     console.error("Error fetching project data:", error);
     return {
       props: {
-        project: {},
+        project: {}, // Empty project if there's an error
       },
     };
   }
