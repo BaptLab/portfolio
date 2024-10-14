@@ -97,9 +97,7 @@ const ProjectPage = ({ project }) => {
 export default ProjectPage;
 export async function getStaticPaths() {
   // Fetch the local JSON file with all the projects from the public folder
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
-  );
+  const res = await fetch("/data/projets.json");
   const projects = await res.json();
 
   // Generate static paths for all projects
@@ -118,9 +116,7 @@ export async function getStaticProps({ params }) {
 
   try {
     // Fetch the local JSON file with all the projects from the public folder
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
-    );
+    const res = await fetch("/data/projets.json");
     const projects = await res.json();
 
     // Find the project that matches the projectId from the URL
