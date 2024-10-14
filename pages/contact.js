@@ -261,8 +261,8 @@ export default function Contact() {
                   />
                   En cochant cette case, vous consentez à la
                   collecte de vos données uniquement afin
-                  d'établir un contact avec Baptiste LABAUNE
-                  et aucun tiers.
+                  d&#39;établir un contact avec Baptiste
+                  LABAUNE et aucun tiers.
                 </label>
               </div>
 

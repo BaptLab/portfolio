@@ -155,13 +155,13 @@ export default function Home({ offres, projects }) {
               <p className="offre-warning-paragraphe">
                 Les prix indiqués sont donnés à titre
                 indicatif et peuvent varier en fonction de
-                plusieurs facteurs. La présence d'un
+                plusieurs facteurs. La présence d&#39;un
                 back-office, le choix entre un design
                 prédéfini ou sur mesure (cf. colonne Prix).
                 La complexité spécifique de votre demande
                 peut également influencer le coût final et
                 faire dépasser les prix indiqués. Chaque
-                devis est personnalisé pour s'adapter au
+                devis est personnalisé pour s&#39;adapter au
                 mieux à vos besoins et garantir un service
                 de qualité.
               </p>
