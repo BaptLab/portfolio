@@ -95,7 +95,6 @@ const ProjectPage = ({ project }) => {
 };
 
 export default ProjectPage;
-
 export async function getStaticPaths() {
   // Fetch the local JSON file with all the projects from the public folder
   const res = await fetch(
