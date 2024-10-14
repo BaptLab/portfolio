@@ -115,7 +115,7 @@
       100vh - 59px
     ); /* Use calc to subtract 62px from 100vh */
     border-left: 1px solid white;
-    transition-duration: 800ms;
+    transition-duration: 300ms;
   }
   .navBar a {
     border: inherit;

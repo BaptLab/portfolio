@@ -129,7 +129,7 @@ export default function Home({ offres, projects }) {
               projects.map((project) => (
                 <Project
                   key={project.id}
-                  imagePath={project.images[0]}
+                  imagePath={project.coverImage[0]}
                   projectId={project.id.toString()}
                   clientName={project.clientName}
                   projectDescription={project.description}

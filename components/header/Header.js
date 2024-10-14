@@ -6,21 +6,26 @@ import { useState, useEffect, useRef } from "react";
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const navRef = useRef(null); // Reference for the nav element
+  const burgerRef = useRef(null); // Reference for the hamburger button
 
-  const switchNav = () => {
-    setIsNavOpen(!isNavOpen);
+  const switchNav = (event) => {
+    event.stopPropagation(); // Prevent click event from bubbling up to document
+    setIsNavOpen((prevState) => !prevState); // Toggle the navigation state
   };
 
   // Close the nav when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // If clicking outside of the nav and hamburger, close the nav
       if (
         navRef.current &&
-        !navRef.current.contains(event.target)
+        !navRef.current.contains(event.target) &&
+        !burgerRef.current.contains(event.target) // Ignore clicks on the burger button
       ) {
         setIsNavOpen(false);
       }
     };
+
     if (isNavOpen) {
       document.addEventListener(
         "mousedown",
@@ -32,6 +37,7 @@ const Header = () => {
         handleClickOutside
       );
     }
+
     return () => {
       document.removeEventListener(
         "mousedown",
@@ -48,17 +54,22 @@ const Header = () => {
         </h1>
       </Link>
       <button
-        className={`${styles.hamburger} ${
-          isNavOpen ? styles.open : ""
-        }`}
+        className={`${styles.hamburger}`}
         onClick={switchNav}
+        ref={burgerRef} // Attach the ref to the button
       >
-        <span className={styles.burgerIcon}>
+        <span
+          className={`${styles.burgerIcon} ${
+            isNavOpen ? styles.open : ""
+          }`}
+        >
+          <span></span>
           <span></span>
           <span></span>
           <span></span>
         </span>
       </button>
+
       <Navigation
         isNavOpen={isNavOpen}
         setIsNavOpen={setIsNavOpen}
