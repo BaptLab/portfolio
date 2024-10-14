@@ -20,27 +20,5 @@
       "/images/projets/truepeak/TruePeak_3.PNG",
       "/images/projets/truepeak/TruePeak_4.PNG"
     ]
-  },
-  {
-    "id": "02",
-    "clientName": "Mathieu LEFEBVRE - TruePeak Productions 2",
-    "date": "2024",
-    "offer": "Site Statique Basique",
-    "technologies": [
-      "HTML, CSS, JavaScript",
-      "React",
-      "Maquette sur mesure"
-    ],
-    "description": "Création du site vitrine True Peak Productions pour Mathieu Lefebvre, ingénieur du son, afin de promouvoir son activité et son expertise dans le domaine de l'audio.",
-    "liveSite": "https://truepeakproductions.com",
-    "coverImage": [
-      "/images/projets/truepeak/logo_truepeak.png"
-    ],
-    "images": [
-      "/images/projets/truepeak/TruePeak_1.PNG",
-      "/images/projets/truepeak/TruePeak_2.PNG",
-      "/images/projets/truepeak/TruePeak_3.PNG",
-      "/images/projets/truepeak/TruePeak_4.PNG"
-    ]
   }
 ]
