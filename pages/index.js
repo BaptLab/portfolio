@@ -9,11 +9,15 @@ import SlideCarrousel from "@/components/slideCarrousel/SlideCarrousel";
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
 
-export default function Home({ offres }) {
+export default function Home({ offres, projects }) {
+  console.log("offres:", offres);
+  console.log("projets:", projects);
   return (
     <>
       <Head>
-        <title>Baptiste LABAUNE - BLab.</title>
+        <title>
+          Baptiste LABAUNE - Développeur web en freelance
+        </title>
         <meta
           name="description"
           content="Site internet de Baptiste LABAUNE"
@@ -37,18 +41,27 @@ export default function Home({ offres }) {
                 height={230}
               ></Image>
               <p className="profil-description">
-                Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis{" "}
-                <strong>nostrud exercitation</strong>{" "}
-                ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in{" "}
-                <strong>reprehenderit </strong> in voluptate
-                velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat
-                non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.
+                Je suis Baptiste,{" "}
+                <strong>développeur web</strong> freelance,
+                spécialisé dans la création de sites
+                internet sur mesure. Que vous soyez un{" "}
+                <strong>
+                  particulier ou une entreprise
+                </strong>{" "}
+                je vous accompagne dans la réalisation de
+                vos projets web, mais aussi dans
+                l’amélioration ou l’optimisation de sites
+                existants. Grâce à mon expertise en
+                développement{" "}
+                <strong> frontend et backend</strong> ainsi
+                qu’en <strong>conformité RGPD</strong>, je
+                suis à même de proposer des solutions
+                adaptées à chaque besoin. Curieux et motivé,
+                je suis ouvert à{" "}
+                <strong>tous types de projets</strong>, et
+                disponible pour des missions en entreprise,
+                avec la volonté de relever de nouveaux défis
+                pour continuer à élargir mes compétences.
               </p>
             </div>
           </div>
@@ -60,11 +73,9 @@ export default function Home({ offres }) {
               <Competence
                 logoPath="/logos/frontend.png"
                 title="Frontend"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+                description="Je maîtrise les outils et frameworks nécessaires à la création d'interfaces web dynamiques et interactives, offrant une expérience utilisateur fluide et moderne."
                 competenceList={[
-                  "HTML",
-                  "CSS",
-                  "JavaScript",
+                  "HTML, CSS, JavaScript",
                   "Wordpress",
                   "Angular",
                   "React",
@@ -76,7 +87,7 @@ export default function Home({ offres }) {
               <Competence
                 logoPath="/logos/backend.png"
                 title="Backend"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+                description="J’apporte des compétences solides dans la construction et la gestion de systèmes backend, en garantissant sécurité, performance et une gestion optimisée des bases de données."
                 competenceList={[
                   "Java",
                   "SpringBoot (security, starter web, data JPA, etc.)",
@@ -87,7 +98,7 @@ export default function Home({ offres }) {
               <Competence
                 logoPath="/logos/testing.png"
                 title="Connaissances"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+                description="Je possède une expertise en méthodologies de travail, en conformité aux normes (notamment RGPD), ainsi qu’en architecture logicielle, assurant des bases solides à chaque projet."
                 competenceList={[
                   "Méthodologie agile",
                   "Démarche CI/CD",
@@ -99,7 +110,7 @@ export default function Home({ offres }) {
               <Competence
                 logoPath="/logos/software.png"
                 title="Logiciels"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+                description="J’utilise une gamme d'outils et de logiciels professionnels pour concevoir, développer et optimiser des projets web, garantissant des solutions de qualité à chaque étape."
                 competenceList={[
                   "Figma",
                   "Visual Studio Code",
@@ -113,20 +124,20 @@ export default function Home({ offres }) {
         <section id="projets">
           <div className="section-container">
             <h2>[ Mes projets ]</h2>
-            <Project
-              imagePath="/images/test.jpg"
-              projectId="01"
-              clientName="Nom du client"
-              projectDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-              techUsed={["HTML", "CSS", "JS"]}
-            />
-            <Project
-              imagePath="/images/test2.jpg"
-              projectId="02"
-              clientName="Nom du client"
-              projectDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
-              techUsed={["HTML", "CSS", "JS"]}
-            />
+            {projects.length > 0 ? (
+              projects.map((project) => (
+                <Project
+                  key={project.id}
+                  imagePath={project.images[0]}
+                  projectId={project.id.toString()}
+                  clientName={project.clientName}
+                  projectDescription={project.description}
+                  techUsed={project.technologies}
+                />
+              ))
+            ) : (
+              <p>Aucun projet disponible pour le moment.</p>
+            )}
           </div>
         </section>
         <section id="offres">
@@ -167,9 +178,8 @@ export default function Home({ offres }) {
   );
 }
 
-export async function getStaticProps() {
+/* export async function getStaticProps() {
   try {
-    // Log the URL being accessed
     const url = `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`;
     console.log("Fetching data from:", url);
 
@@ -196,22 +206,59 @@ export async function getStaticProps() {
       },
     };
   }
+} */
+
+export async function getStaticProps() {
+  try {
+    const offresUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`;
+    const projectsUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`;
+
+    // Fetch data for both offres and projects concurrently
+    const [offresRes, projectsRes] =
+      await Promise.allSettled([
+        fetch(offresUrl),
+        fetch(projectsUrl),
+      ]);
+
+    // Handle offres response
+    let offres = [];
+    if (
+      offresRes.status === "fulfilled" &&
+      offresRes.value.ok
+    ) {
+      offres = await offresRes.value.json();
+    } else {
+      console.error(
+        `Failed to fetch offres, status: ${offresRes?.value?.status}`
+      );
+    }
+
+    // Handle projects response
+    let projects = [];
+    if (
+      projectsRes.status === "fulfilled" &&
+      projectsRes.value.ok
+    ) {
+      projects = await projectsRes.value.json();
+    } else {
+      console.error(
+        `Failed to fetch projects, status: ${projectsRes?.value?.status}`
+      );
+    }
+
+    return {
+      props: {
+        offres,
+        projects,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching JSON data:", error);
+    return {
+      props: {
+        offres: [], // Return empty array in case of error
+        projects: [], // Return empty array in case of error
+      },
+    };
+  }
 }
-
-/* export async function getStaticPaths() {
-  // Assuming you have an endpoint or a list of all project IDs
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projects.json`
-  );
-  const projects = await res.json();
-
-  const paths = projects.map((project) => ({
-    params: { projectId: project.id.toString() }, // Ensure projectId is a string
-  }));
-
-  return {
-    paths,
-    fallback: true, // Enable fallback mode if there are more projects added later
-  };
-}
- */

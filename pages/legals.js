@@ -23,11 +23,12 @@ const Legal = () => {
         content: [
           {
             label: "Hébergeur",
-            value: "TBD",
+            value: "OVH",
           },
           {
             label: "Adresse",
-            value: "TBD",
+            value:
+              "2, rue Kellermann, 59100 Roubaix, France",
           },
         ],
       },
