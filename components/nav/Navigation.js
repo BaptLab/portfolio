@@ -2,26 +2,61 @@ import styles from "./navigation.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-const Navigation = () => {
+const Navigation = ({
+  isNavOpen,
+  setIsNavOpen,
+  navRef,
+}) => {
+  const handleNavLinkClick = () => {
+    setIsNavOpen(false); // Close the nav when a link is clicked
+  };
+
   return (
-    <nav className={styles.navBar}>
+    <nav
+      ref={navRef} // Attach the navRef to detect clicks outside
+      className={`${styles.navBar} ${
+        isNavOpen ? styles.open : ""
+      }`}
+    >
       <ul className={styles.anchorLinks}>
         <li>
-          <Link href="/#profil">Qui suis-je ?</Link>
+          <Link
+            href="/#profil"
+            onClick={handleNavLinkClick}
+          >
+            Qui suis-je ?
+          </Link>
         </li>
         <li>
-          <Link href="/#technos">compétences</Link>
+          <Link
+            href="/#technos"
+            onClick={handleNavLinkClick}
+          >
+            compétences
+          </Link>
         </li>
         <li>
-          <Link href="/#projets">Projets</Link>
+          <Link
+            href="/#projets"
+            onClick={handleNavLinkClick}
+          >
+            Projets
+          </Link>
         </li>
         <li>
-          <Link href="/#offres">Offres</Link>
+          <Link
+            href="/#offres"
+            onClick={handleNavLinkClick}
+          >
+            Offres
+          </Link>
         </li>
       </ul>
 
       <div className={styles.externalLinks}>
-        <Link href="/contact">Contact</Link>
+        <Link href="/contact" onClick={handleNavLinkClick}>
+          Contact
+        </Link>
         <a
           href="https://github.com/BaptLab"
           target="_blank"

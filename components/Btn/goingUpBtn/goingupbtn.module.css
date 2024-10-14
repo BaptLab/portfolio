@@ -6,10 +6,10 @@
   font-size: 1.4em;
   background-color: #000;
   color: #fff;
-  border: 1px solid white;
-  border-radius: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 3;
   overflow: hidden;
   font-weight: 500;
 }
@@ -28,4 +28,10 @@
 
 .goingUpBtn:hover::before {
   height: 100%; /* Animate to full height on hover */
+}
+
+@media only screen and (max-width: 480px) {
+  .goingUpBtn {
+    padding: 10px 15px;
+  }
 }

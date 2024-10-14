@@ -36,3 +36,18 @@
 .offreContainer .offreTitlePrice {
   margin-top: auto;
 }
+@media only screen and (max-width: 480px) {
+  .offreContainer {
+    padding: 17px;
+    max-width: 360px;
+    min-width: 250px;
+  }
+
+  .offreContainer .offreName {
+    margin-bottom: 25px;
+  }
+
+  .offreContainer span {
+    margin-bottom: 20px;
+  }
+}

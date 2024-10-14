@@ -51,13 +51,14 @@ export default function Home({ offres, projects }) {
                 je vous accompagne dans la réalisation de
                 vos projets web, mais aussi dans
                 l’amélioration ou l’optimisation de sites
-                existants. Grâce à mon expertise en
+                existants. <br></br>
+                <br></br>Grâce à mon expertise en
                 développement{" "}
                 <strong> frontend et backend</strong> ainsi
                 qu’en <strong>conformité RGPD</strong>, je
                 suis à même de proposer des solutions
-                adaptées à chaque besoin. Curieux et motivé,
-                je suis ouvert à{" "}
+                adaptées à chaque besoin. <br></br>
+                <br></br>Curieux et motivé, je suis ouvert à{" "}
                 <strong>tous types de projets</strong>, et
                 disponible pour des missions en entreprise,
                 avec la volonté de relever de nouveaux défis
@@ -90,7 +91,7 @@ export default function Home({ offres, projects }) {
                 description="J’apporte des compétences solides dans la construction et la gestion de systèmes backend, en garantissant sécurité, performance et une gestion optimisée des bases de données."
                 competenceList={[
                   "Java",
-                  "SpringBoot (security, starter web, data JPA, etc.)",
+                  "SpringBoot (security, web, data JPA, etc.)",
                   "MongoDB & MySQL",
                   "JUnit",
                 ]}
@@ -146,11 +147,11 @@ export default function Home({ offres, projects }) {
 
             <SlideCarrousel offres={offres} />
             <div className="offre-warning">
-              <Image
+              {/* <Image
                 src={"/logos/warning.png"}
                 width={24}
                 height={24}
-              />
+              /> */}
               <p className="offre-warning-paragraphe">
                 Les prix indiqués sont donnés à titre
                 indicatif et peuvent varier en fonction de

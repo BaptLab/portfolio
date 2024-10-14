@@ -46,7 +46,7 @@ const Legal = () => {
         content: [
           {
             value:
-              "Les informations personnelles collectées sur ce site ne sont utilisées qu'à des fins de simplification des demandes de contacts. Elles ne seront en aucun cas vendues ou cédées à des tiers sans votre consentement.",
+              "Les informations personnelles collectées sur ce site ne sont utilisées qu'à des fins de simplification des demandes de contacts. Elles ne seront en aucun cas vendues ou cédées à des tiers sans votre consentement. Les données sont uniquement employé afin de faciliter la prise de contact et sont supprimés sous 1 an.",
           },
           {
             value:

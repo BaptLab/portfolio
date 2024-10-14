@@ -230,23 +230,22 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div
-                id="project-description-input-container"
-                className="input-container"
-              >
-                <label htmlFor="projectDescription">
-                  Description du projet *
-                </label>
-                <textarea
-                  id="projectDescription"
-                  value={projectDescription}
-                  onChange={(e) =>
-                    setProjectDescription(e.target.value)
-                  }
-                  placeholder="Message..."
-                  rows="5"
-                  required
-                />
+              <div className="big-input-container">
+                <div className="input-container">
+                  <label htmlFor="projectDescription">
+                    Description du projet *
+                  </label>
+                  <textarea
+                    id="projectDescription"
+                    value={projectDescription}
+                    onChange={(e) =>
+                      setProjectDescription(e.target.value)
+                    }
+                    placeholder="Message..."
+                    rows="5"
+                    required
+                  />
+                </div>
               </div>
 
               {/* Privacy checkbox */}
@@ -260,11 +259,10 @@ export default function Contact() {
                     }
                     required
                   />
-                  Conformément à la réglementation en
-                  matière de données à caractère personnel,
-                  nous vous informons que les informations
-                  recueillies vous concernant sont
-                  collectées...
+                  En cochant cette case, vous consentez à la
+                  collecte de vos données uniquement afin
+                  d'établir un contact avec Baptiste LABAUNE
+                  et aucun tiers.
                 </label>
               </div>
 

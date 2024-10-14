@@ -3,6 +3,12 @@
   justify-content: space-between;
   flex-direction: column;
   text-transform: uppercase;
+  border-bottom: 2px solid white;
+  position: fixed;
+  min-width: 411px;
+  z-index: 4;
+  background-color: #0d0d0d;
+  width: 100vw;
 }
 
 .logoContainer h1 {
@@ -10,4 +16,46 @@
   font-size: 32px;
   margin: 0;
   color: white;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burgerIcon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+@media only screen and (max-width: 480px) {
+  .logoContainer h1 {
+    font-size: 17px;
+    padding: 10px;
+    margin-right: 65px;
+  }
+
+  .hamburger {
+    display: block;
+    position: fixed; /* Show hamburger on mobile */
+    top: 13px;
+    right: 16px;
+    z-index: 4;
+  }
+
+  .burgerIcon span {
+    width: 35px;
+    height: 4px;
+  }
+
+  /* Add styles for showing/hiding Navigation menu when burger is clicked */
+  .navigation {
+    display: none;
+  }
 }

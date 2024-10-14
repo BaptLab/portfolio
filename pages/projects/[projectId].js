@@ -6,28 +6,17 @@ import Header from "@/components/header/Header";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-const ProjectPage = () => {
+const ProjectPage = ({ project }) => {
   const router = useRouter();
-
-  const project = {
-    clientName: "Mathieu LEFEBVRE - TruePeak Productions",
-    date: "2024",
-    offer: "Site Statique Basique",
-    technologies: ["WEBDESIGN", "WEBFLOW", "ANIMATION"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    liveSite: "https://truepeakproductions.com",
-    images: [
-      "/images/projets/truepeak/TruePeak_1.PNG",
-      "/images/projets/truepeak/TruePeak_2.PNG",
-      "/images/projets/truepeak/TruePeak_3.PNG",
-      "/images/projets/truepeak/TruePeak_4.PNG",
-    ],
-  };
 
   // If the page is still generating on the server or fallback mode is enabled
   if (router.isFallback) {
     return <div>Loading...</div>;
+  }
+
+  // If no project data is available
+  if (!project || Object.keys(project).length === 0) {
+    return <div>Project not found</div>;
   }
 
   return (
@@ -71,7 +60,7 @@ const ProjectPage = () => {
                 href={project.liveSite}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-new-text="VOIR LE SITE LIVE [⇗]" /* The new text you want on hover */
+                data-new-text="VOIR LE SITE LIVE [⇗]"
               >
                 VOIR LE SITE LIVE [⇗]
               </a>
@@ -107,37 +96,57 @@ const ProjectPage = () => {
 
 export default ProjectPage;
 
-// Commented out the getStaticProps function for now
-// export async function getStaticProps({ params }) {
-//   const { projectId } = params;
+export async function getStaticPaths() {
+  // Fetch the local JSON file with all the projects from the public folder
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+  );
+  const projects = await res.json();
 
-//   try {
-//     // Log the URL being accessed
-//     const url = `${process.env.NEXT_PUBLIC_BASE_URL}/data/project${projectId}.json`;
-//     console.log("Fetching data from:", url);
+  // Generate static paths for all projects
+  const paths = projects.map((project) => ({
+    params: { projectId: project.id },
+  }));
 
-//     const res = await fetch(url);
+  return {
+    paths,
+    fallback: false, // Pre-generate all project pages at build time
+  };
+}
 
-//     if (!res.ok) {
-//       throw new Error(
-//         `Failed to fetch data, status code: ${res.status}`
-//       );
-//     }
+export async function getStaticProps({ params }) {
+  const { projectId } = params;
 
-//     const project = await res.json();
+  try {
+    // Fetch the local JSON file with all the projects from the public folder
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+    );
+    const projects = await res.json();
 
-//     return {
-//       props: {
-//         project,
-//       },
-//       revalidate: 10, // Revalidate at most every 10 seconds
-//     };
-//   } catch (error) {
-//     console.error("Error fetching JSON data:", error);
-//     return {
-//       props: {
-//         project: {}, // Return empty object in case of error
-//       },
-//     };
-//   }
-// }
+    // Find the project that matches the projectId from the URL
+    const project = projects.find(
+      (proj) => proj.id === projectId
+    );
+
+    // If the project is not found, return a 404
+    if (!project) {
+      return {
+        notFound: true, // This will trigger a 404 page
+      };
+    }
+
+    return {
+      props: {
+        project,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching project data:", error);
+    return {
+      props: {
+        project: {},
+      },
+    };
+  }
+}
