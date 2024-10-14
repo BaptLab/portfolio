@@ -96,45 +96,57 @@ const ProjectPage = ({ project }) => {
 
 export default ProjectPage;
 
-// Here we generate paths for all the projects based on the already fetched project data
 export async function getStaticPaths() {
+  // Fetch the local JSON file with all the projects from the public folder
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
   );
   const projects = await res.json();
 
+  // Generate static paths for all projects
   const paths = projects.map((project) => ({
-    params: { projectId: project.id.toString() }, // Ensure the projectId is a string
+    params: { projectId: project.id },
   }));
 
   return {
     paths,
-    fallback: false, // No fallback, we want all pages to be generated at build time
+    fallback: false, // Pre-generate all project pages at build time
   };
 }
 
-// We reuse the already fetched data from the index page (no need to refetch here)
 export async function getStaticProps({ params }) {
   const { projectId } = params;
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
-  );
-  const projects = await res.json();
+  try {
+    // Fetch the local JSON file with all the projects from the public folder
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+    );
+    const projects = await res.json();
 
-  const project = projects.find(
-    (proj) => proj.id === projectId
-  );
+    // Find the project that matches the projectId from the URL
+    const project = projects.find(
+      (proj) => proj.id === projectId
+    );
 
-  if (!project) {
+    // If the project is not found, return a 404
+    if (!project) {
+      return {
+        notFound: true, // This will trigger a 404 page
+      };
+    }
+
     return {
-      notFound: true,
+      props: {
+        project,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching project data:", error);
+    return {
+      props: {
+        project: {},
+      },
     };
   }
-
-  return {
-    props: {
-      project,
-    },
-  };
 }
