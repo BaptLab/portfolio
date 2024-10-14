@@ -95,58 +95,46 @@ const ProjectPage = ({ project }) => {
 };
 
 export default ProjectPage;
+
+// Here we generate paths for all the projects based on the already fetched project data
 export async function getStaticPaths() {
-  // Fetch the local JSON file with all the projects from the public folder during build
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
   );
   const projects = await res.json();
 
-  // Generate static paths for all projects
   const paths = projects.map((project) => ({
-    params: { projectId: project.id },
+    params: { projectId: project.id.toString() }, // Ensure the projectId is a string
   }));
 
   return {
     paths,
-    fallback: "blocking", // Dynamically generate missing pages on request
+    fallback: false, // No fallback, we want all pages to be generated at build time
   };
 }
 
+// We reuse the already fetched data from the index page (no need to refetch here)
 export async function getStaticProps({ params }) {
   const { projectId } = params;
 
-  try {
-    // Fetch data dynamically during runtime or from the environment variable
-    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`;
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+  );
+  const projects = await res.json();
 
-    // Check if we are running server-side or during the build process
-    const res = await fetch(url);
-    const projects = await res.json();
+  const project = projects.find(
+    (proj) => proj.id === projectId
+  );
 
-    // Find the project that matches the projectId from the URL
-    const project = projects.find(
-      (proj) => proj.id === projectId
-    );
-
-    // If the project is not found, return a 404
-    if (!project) {
-      return {
-        notFound: true, // This will trigger a 404 page
-      };
-    }
-
+  if (!project) {
     return {
-      props: {
-        project,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching project data:", error);
-    return {
-      props: {
-        project: {}, // Empty project if there's an error
-      },
+      notFound: true,
     };
   }
+
+  return {
+    props: {
+      project,
+    },
+  };
 }
