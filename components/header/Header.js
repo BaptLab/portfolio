@@ -50,7 +50,8 @@ const Header = () => {
     <header className={styles.headerContainer}>
       <Link href={"/"} className={styles.logoContainer}>
         <h1 className={styles.logo}>
-          Baptiste LABAUNE - Développeur Web en Freelance
+          Baptiste LABAUNE <br></br>Développeur Web
+          Freelance
         </h1>
       </Link>
       <button

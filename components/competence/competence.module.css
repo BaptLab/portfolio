@@ -3,6 +3,7 @@
   padding-left: 50px;
   padding-bottom: 50px;
   max-width: 550px;
+  min-width: 275px;
 }
 
 .competenceTitle {
@@ -17,12 +18,13 @@
   opacity: 50%;
   padding-right: 100px;
   margin-bottom: 25px;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  font-family: "PPFormula";
 }
 
 .competenceListContainer {
   font-weight: 300;
-  font-size: 1.35em;
+  font-size: 1.45em;
   list-style-position: inside;
 }
 
@@ -44,7 +46,7 @@
   }
 
   .competenceTitle {
-    padding-left: 50px;
+    padding-left: 40px;
     font-weight: 400;
   }
 

@@ -15,7 +15,6 @@
   flex-direction: column;
   align-self: flex-end;
   margin-right: 30px;
-  font-size: 1.036em;
   font-family: "PPFormula";
 }
 
@@ -90,7 +89,7 @@
   .projectContainer img {
     width: auto;
     margin-right: 0px;
-    height: 250px;
+    height: 180px;
   }
 
   .projectInfos {
@@ -99,6 +98,26 @@
   }
 
   .projectCTAContainer {
-    margin-top: 20px;
+    margin-top: 35px;
+  }
+
+  .projectCTA {
+    font-size: 1.2em;
+  }
+
+  .projectInfos .clientName {
+    font-size: 1.9em;
+    margin-bottom: 30px;
+  }
+
+  .projectInfos .projectDescription {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+
+  .projectInfos li {
+    font-family: "PPNEUMONTREAL";
+    font-size: 1.35em;
+    font-weight: 300;
   }
 }

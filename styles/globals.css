@@ -1,6 +1,7 @@
 :root {
   --background: #0d0d0d;
   --foreground: #ffffff;
+  font-size: 13px;
 }
 
 /* Define your custom font with different weights and styles */
@@ -92,6 +93,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and newer versions of Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -122,6 +128,10 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li {
+  list-style-position: inside;
 }
 
 h2 {
@@ -163,7 +173,6 @@ section {
 }
 
 .offre-warning {
-  font-size: 0.938em;
   font-family: "PPFormula";
   font-weight: 300;
   padding: 25px 35px;
@@ -408,12 +417,12 @@ section {
 
 @media only screen and (max-width: 480px) {
   :root {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   h2 {
     margin-bottom: 40px;
-    font-size: 2.6em;
+    font-size: 2.1em;
   }
 
   section {
@@ -429,7 +438,9 @@ section {
     width: 100%;
     gap: 30px;
     margin-bottom: 20px;
-    text-align: justify;
+    /*     text-align: justify;
+ */
+    font-size: 1.55em;
   }
   .profil-container img {
     object-fit: cover;
@@ -437,8 +448,12 @@ section {
     width: auto;
   }
 
+  .competences-container {
+    justify-content: center;
+  }
+
   .subtitle {
-    font-size: 1.75em;
+    font-size: 1.4em;
     padding-bottom: 40px;
   }
 

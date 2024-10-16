@@ -16,7 +16,7 @@ export default function Home({ offres, projects }) {
     <>
       <Head>
         <title>
-          Baptiste LABAUNE - Développeur web en freelance
+          Baptiste LABAUNE - Développeur web freelance
         </title>
         <meta
           name="description"
@@ -98,7 +98,7 @@ export default function Home({ offres, projects }) {
               />
               <Competence
                 logoPath="/logos/testing.png"
-                title="Connaissances"
+                title="Skills"
                 description="Je possède une expertise en méthodologies de travail, en conformité aux normes (notamment RGPD), ainsi qu’en architecture logicielle, assurant des bases solides à chaque projet."
                 competenceList={[
                   "Méthodologie agile",
