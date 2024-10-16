@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
@@ -5,51 +6,51 @@ import NextAndBackBtn from "@/components/Btn/nextAndBackBtn/NextAndBackBtn";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
-const ProjectPage = () => {
-  const router = useRouter();
-  const { projectId } = router.query; // Get projectId from URL
-  const [project, setProject] = useState(null);
+export async function getStaticPaths() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+  );
+  const projects = await res.json();
+
+  const paths = projects.map((project) => ({
+    params: { projectId: project.id.toString() },
+  }));
+
+  return {
+    paths,
+    fallback: false, // If true, the page will be generated if it's not found; otherwise, it will return a 404
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
+  );
+  const projects = await res.json();
+
+  const project = projects.find(
+    (proj) => proj.id === params.projectId
+  );
+
+  return {
+    props: {
+      project: project || null,
+    },
+  };
+}
+
+const ProjectPage = ({ project }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (projectId) {
-      const fetchProject = async () => {
-        try {
-          const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`
-          );
-          const projects = await res.json();
-          const foundProject = projects.find(
-            (proj) => proj.id === projectId
-          );
-          if (foundProject) {
-            setProject(foundProject);
-          } else {
-            setProject(null); // Handle if no project is found
-          }
-        } catch (error) {
-          console.error(
-            "Error fetching project data:",
-            error
-          );
-          setProject(null);
-        } finally {
-          setLoading(false);
-        }
-      };
+    setLoading(false);
+  }, []);
 
-      fetchProject();
-    }
-  }, [projectId]);
-
-  // Show loading spinner while the project data is being fetched
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  // If no project data is available
   if (!project) {
     return <div>Project not found</div>;
   }
