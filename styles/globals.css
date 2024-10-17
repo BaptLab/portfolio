@@ -171,6 +171,9 @@ section {
 .profil-container img {
   border-radius: 21px;
 }
+.offresWrapper {
+  margin-bottom: 40px;
+}
 
 .offre-warning {
   font-family: "PPFormula";

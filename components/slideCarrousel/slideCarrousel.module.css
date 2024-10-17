@@ -1,22 +1,106 @@
-.offresContainer {
-  width: 100vw;
+.carouselContainer {
   display: flex;
-  gap: 50px;
-  max-width: 100%;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  padding: 20px 0px;
-  margin-bottom: 60px;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.offres-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Webkit browsers */
+.offresWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
 }
-@media only screen and (max-width: 480px) {
-  .offresContainer {
-    width: 100%;
+
+/* Slide Out Left and Fade */
+.slideOutLeft {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+
+/* Slide Out Right and Fade */
+.slideOutRight {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+/* Slide In from Right */
+.slideInRight {
+  transform: translateX(150%);
+  opacity: 0;
+  animation: slideInFromRight 0.5s forwards ease-in-out;
+}
+
+/* Slide In from Left */
+.slideInLeft {
+  transform: translateX(-150%);
+  opacity: 0;
+  animation: slideInFromLeft 0.5s forwards ease-in-out;
+}
+
+/* Keyframes for sliding in */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Buttons for navigation */
+.navButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Hide the navigation arrows on mobile */
+@media only screen and (max-width: 600px) {
+  .navButton {
+    display: none;
+  }
+}
+
+/* Show the navigation arrows on desktop */
+@media only screen and (min-width: 601px) {
+  .navButton {
+    display: block;
+  }
+
+  .navButton:first-of-type {
+    left: -50px;
+  }
+
+  .navButton:last-of-type {
+    right: -50px;
   }
 }

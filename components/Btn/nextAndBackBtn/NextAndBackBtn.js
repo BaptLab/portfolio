@@ -15,7 +15,7 @@ const NextAndBackBtn = (props) => {
     }
 
     // Navigate to the next or previous project based on the new ID
-    router.push(`/projects/${nextId}`);
+    router.push(`/projects/0${nextId}`);
   };
 
   return (

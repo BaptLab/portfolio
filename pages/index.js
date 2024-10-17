@@ -144,8 +144,9 @@ export default function Home({ offres, projects }) {
         <section id="offres">
           <div className="section-container">
             <h2>[ Mes offres ]</h2>
-
-            <SlideCarrousel offres={offres} />
+            <div className="offresWrapper">
+              <SlideCarrousel offres={offres} />
+            </div>
             <div className="offre-warning">
               {/* <Image
                 src={"/logos/warning.png"}
