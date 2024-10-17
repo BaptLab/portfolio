@@ -105,7 +105,6 @@
   .navBar {
     position: absolute;
     top: 62px;
-
     right: -100%;
     flex-direction: column;
     border: inherit;
@@ -116,7 +115,7 @@
     ); /* Use calc to subtract 62px from 100vh */
     border-left: 1px solid white;
     transition-duration: 300ms;
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   .navBar a {
     border: inherit;

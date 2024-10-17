@@ -310,6 +310,9 @@ section {
   font-size: 0.925em;
   opacity: 80%;
 }
+#project {
+  font-size: 1.2em;
+}
 
 #project .project-title {
   font-weight: 400;

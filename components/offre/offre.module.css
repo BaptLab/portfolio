@@ -23,13 +23,14 @@
 
 .offreContainer .offreId {
   margin-bottom: 12px;
+  font-family: "PPFormula";
 }
 
 .offreContainer .offreTitle {
-  font-size: 1.5em;
+  font-size: 1.15em;
   text-transform: uppercase;
   margin-bottom: 12px;
-  font-family: "PPNeuMontreal";
+  font-family: "PPFormula";
 }
 
 .offreContainer .offreTitlePrice {
@@ -41,13 +42,23 @@
     max-width: 360px;
     min-width: 250px;
     width: 100%;
+    font-size: 1.25em;
   }
-
+  .offreContainer .offreId {
+    font-size: 0.9em;
+  }
   .offreContainer .offreName {
     margin-bottom: 25px;
+    font-size: 1.9em;
+    text-align: left;
   }
 
   .offreContainer span {
+    text-align: left;
     margin-bottom: 20px;
+  }
+
+  .offreContainer span.text {
+    font-size: 1.35em;
   }
 }
