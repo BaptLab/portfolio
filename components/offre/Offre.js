@@ -12,7 +12,6 @@ const Offre = (props) => {
       <span className={styles.offreTitle}>
         Technologies
       </span>
-      <h2>[B]</h2>
       <span className={styles.offreTechnos}>
         [{" "}
         {props.offreTechnos.map((techno, index) => (
