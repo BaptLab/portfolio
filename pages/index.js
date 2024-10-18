@@ -20,7 +20,7 @@ export default function Home({ offres, projects }) {
         </title>
         <meta
           name="description"
-          content="Site internet de Baptiste LABAUNE"
+          content="Site internet de Baptiste LABAUNE - Développeur web en freelance"
         />
         <meta
           name="viewport"
