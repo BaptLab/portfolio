@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  font-size: 1.25em;
 }
 
 .offresWrapper {
@@ -87,6 +88,9 @@
 @media only screen and (max-width: 600px) {
   .navButton {
     display: none;
+  }
+  .carouselContainer {
+    font-size: inherit;
   }
 }
 
