@@ -1,6 +1,8 @@
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import Head from "next/head";
+
 import { useState } from "react";
 import emailjs from "emailjs-com"; // Import emailjs
 import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
@@ -70,6 +72,18 @@ export default function Contact() {
 
   return (
     <>
+      <Head>
+        <title>Baptiste LABAUNE - Contact</title>
+        <meta
+          name="Page de contact"
+          content="Site internet de Baptiste LABAUNE - Développeur web en freelance"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <Header />
       <main>
         <section id="contact">

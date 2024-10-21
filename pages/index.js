@@ -19,7 +19,7 @@ export default function Home({ offres, projects }) {
           Baptiste LABAUNE - Développeur web freelance
         </title>
         <meta
-          name="description"
+          name="Page d'accueil"
           content="Site internet de Baptiste LABAUNE - Développeur web en freelance"
         />
         <meta

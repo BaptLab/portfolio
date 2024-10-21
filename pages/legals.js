@@ -1,4 +1,6 @@
 import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
+import Head from "next/head";
+
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 
@@ -95,6 +97,18 @@ const Legal = () => {
 
   return (
     <>
+      <Head>
+        <title>Baptiste LABAUNE - Mentions légales</title>
+        <meta
+          name="Page de mentions légales"
+          content="Site internet de Baptiste LABAUNE - Développeur web en freelance"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <Header />
       <main>
         <section id="legals">

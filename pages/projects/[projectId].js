@@ -1,4 +1,4 @@
-import { useRouter } from "next/router";
+import Head from "next/head";
 import { useState, useEffect } from "react";
 import ActionBtn from "@/components/Btn/actionBtn/ActionBtn";
 import GoingUpBtn from "@/components/Btn/goingUpBtn/GoingUpBtn";
@@ -58,6 +58,21 @@ const ProjectPage = ({ project, totalProjects }) => {
 
   return (
     <>
+      <Head>
+        <title>
+          Baptiste LABAUNE - Projet -{" "}
+          {`${project.clientName}`}
+        </title>
+        <meta
+          name="Page du projet"
+          content="Site internet de Baptiste LABAUNE - Développeur web en freelance"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <link rel="icon" href="/logo.png" />
+      </Head>
       <Header />
       <main>
         <section id="project">
