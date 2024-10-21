@@ -185,14 +185,12 @@ export async function getStaticProps() {
     const offresUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/data/offres.json`;
     const projectsUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/data/projets.json`;
 
-    // Fetch data for both offres and projects concurrently
     const [offresRes, projectsRes] =
       await Promise.allSettled([
         fetch(offresUrl),
         fetch(projectsUrl),
       ]);
 
-    // Handle offres response
     let offres = [];
     if (
       offresRes.status === "fulfilled" &&
@@ -205,13 +203,13 @@ export async function getStaticProps() {
       );
     }
 
-    // Handle projects response
     let projects = [];
     if (
       projectsRes.status === "fulfilled" &&
       projectsRes.value.ok
     ) {
       projects = await projectsRes.value.json();
+      console.log("Fetched projects:", projects); // Log the fetched projects here
     } else {
       console.error(
         `Failed to fetch projects, status: ${projectsRes?.value?.status}`
@@ -228,8 +226,8 @@ export async function getStaticProps() {
     console.error("Error fetching JSON data:", error);
     return {
       props: {
-        offres: [], // Return empty array in case of error
-        projects: [], // Return empty array in case of error
+        offres: [],
+        projects: [],
       },
     };
   }

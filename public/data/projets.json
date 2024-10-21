@@ -20,5 +20,28 @@
       "/images/projets/truepeak/TruePeak_3.PNG",
       "/images/projets/truepeak/TruePeak_4.PNG"
     ]
+  },
+  {
+    "id": "02",
+    "clientName": "Lorenzo NACCARATO - Murmurations",
+    "date": "Août/Septembre 2024",
+    "offer": "Demande personnalisées",
+    "technologies": [
+      "HTML, CSS, JavaScript",
+      "Wordpress",
+      "Mapbox",
+      "Facebook & Instagram API",
+      "Conception visuelle sur mesure"
+    ],
+    "description": "Développement d'une carte interactive pour suivre en temps réel la tournée « Murmurations » de Lorenzo Naccarato, symbolisée par un oiseau en mouvement. Intégration de l'API MapBox pour les déplacements et des API Facebook/Instagram pour afficher les publications en direct. Un beau projet qui allie musique et technologie.",
+    "liveSite": "https://lorenzonaccarato.com/",
+    "coverImage": [
+      "/images/projets/murmurations/murmurations_cover.PNG"
+    ],
+    "images": [
+      "/images/projets/murmurations/murmurations_1.PNG",
+      "/images/projets/murmurations/murmurations_2.PNG",
+      "/images/projets/murmurations/murmurations_3.PNG"
+    ]
   }
 ]

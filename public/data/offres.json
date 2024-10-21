@@ -6,7 +6,7 @@
     "offreVersion": "Maquette prédéfinie / Sur Mesure",
     "offreBackOffice": "Non",
     "offreDescription": "Un site vitrine léger et performant, développé en HTML, CSS, et JavaScript, parfait pour une présence en ligne simple et efficace. Idéal pour présenter vos services ou produits, avec un design moderne, mais sans gestion de contenu complexe. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an.",
-    "offrePrice": "350€ - 550€"
+    "offrePrice": "450€ - 650€"
   },
   {
     "offreId": "02",
@@ -20,7 +20,7 @@
     "offreVersion": "Maquette prédéfinie ou sur mesure",
     "offreBackOffice": "Oui",
     "offreDescription": "Un site dynamique développé avec WordPress, idéal pour les utilisateurs souhaitant gérer le contenu eux-mêmes via un back-office intuitif. Ce type de site permet de mettre à jour le contenu sans compétences techniques.",
-    "offrePrice": "600€ - 1000€"
+    "offrePrice": "700€ - 1000€"
   },
   {
     "offreId": "03",
@@ -33,7 +33,7 @@
     "offreVersion": "Maquette prédéfinie ou sur mesure",
     "offreBackOffice": "Oui",
     "offreDescription": "Un site web conçu sur mesure avec Next.js pour une performance et un référencement optimal. Cette solution est idéale pour des besoins spécifiques, offrant une grande flexibilité en termes de fonctionnalités et d'interface utilisateur. Le back-office peut être intégré sur demande pour faciliter la gestion du contenu. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an.",
-    "offrePrice": "600€ - 1000€"
+    "offrePrice": "1700€ - 3000€"
   },
   {
     "offreId": "04",
@@ -46,7 +46,7 @@
     "offreVersion": "Maquette prédéfinie ou sur mesure",
     "offreBackOffice": "Oui",
     "offreDescription": "Une application web complète, développée avec une architecture full-stack. Next.js (SSR ou SSG) pour un frontend interactif, Java/Spring Boot pour un backend robuste, et MySQL/MongoDB pour une base de données sécurisée et scalable. Parfait pour des projets complexes nécessitant une gestion d'utilisateurs, d’API, ou d’autres fonctionnalités avancées. Site Responsive. SEO Naturel. Prise en charge de l’hébergement pour 1 an.",
-    "offrePrice": "600€ - 1000€"
+    "offrePrice": "3500€ - 5400€"
   },
   {
     "offreId": "05",
