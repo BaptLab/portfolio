@@ -18,12 +18,16 @@ const Project = (props) => {
         alt={props.clientName}
         width={400}
         height={400}
+        onClick={navigateToProject}
       />
       <div className={styles.projectInfos}>
         <span className={styles.projectId}>
           [{props.projectId}]
         </span>
-        <span className={styles.clientName}>
+        <span
+          className={styles.clientName}
+          onClick={navigateToProject}
+        >
           {props.clientName}
         </span>
         <p className={styles.projectDescription}>

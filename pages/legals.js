@@ -37,7 +37,7 @@ const Legal = () => {
         content: [
           {
             value:
-              "Le contenu de ce site, y compris mais sans s'y limiter, les textes, images, vidéos et éléments graphiques, est la propriété de Mathieu Lefebvre. Toute reproduction ou utilisation non autorisée est interdite.",
+              "Le contenu de ce site, y compris mais sans s'y limiter, les textes, images, vidéos et éléments graphiques, est la propriété de Baptiste LABAUNE. Toute reproduction ou utilisation non autorisée est interdite.",
           },
         ],
       },

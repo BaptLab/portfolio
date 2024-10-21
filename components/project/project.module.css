@@ -9,6 +9,7 @@
   border-radius: 16px;
   border: 1px solid white;
   object-fit: cover;
+  cursor: pointer;
 }
 .projectInfos {
   display: flex;
@@ -26,6 +27,7 @@
   margin-bottom: 20px;
   font-size: 2.6em;
   font-family: "PPNeuMontreal";
+  cursor: pointer;
 }
 .projectInfos .projectDescription {
   margin-bottom: 40px;

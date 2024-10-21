@@ -171,7 +171,6 @@ export default function Contact() {
                     Site internet
                   </label>
                   <input
-                    type="url"
                     id="website"
                     value={website}
                     onChange={(e) =>
@@ -196,11 +195,21 @@ export default function Contact() {
                   >
                     <option value="">Sélection</option>
                     <option value="Option 1">
-                      Option 1
+                      Site Statique Basique{" "}
                     </option>
                     <option value="Option 2">
-                      Option 2
+                      Site WordPress Personnalisé
                     </option>
+                    <option value="Option 3">
+                      Site Entièrement Personnalisé
+                    </option>
+                    <option value="Option 4">
+                      Application Full-Stack
+                    </option>
+                    <option value="Option 5">
+                      Demandes personnalisées
+                    </option>
+                    <option value="Option 6">Autre </option>
                   </select>
                 </div>
                 {/* Identity input */}
@@ -226,6 +235,7 @@ export default function Contact() {
                     <option value="Particulier">
                       Particulier
                     </option>
+                    <option value="Autre">Autre</option>
                   </select>
                 </div>
               </div>
