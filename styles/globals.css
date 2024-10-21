@@ -409,11 +409,8 @@ section {
 }
 
 @media only screen and (max-width: 1335px) {
-  .profil-container {
-    flex-direction: column;
-  }
   main {
-    padding-top: 63px;
+    padding-top: 153px;
   }
   .profil-container img {
     object-fit: cover;
@@ -422,6 +419,13 @@ section {
 }
 
 @media only screen and (max-width: 480px) {
+  .profil-container {
+    flex-direction: column;
+  }
+
+  main {
+    padding-top: 58px;
+  }
   :root {
     font-size: 11px;
   }

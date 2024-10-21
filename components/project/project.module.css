@@ -78,6 +78,7 @@
   align-items: end;
   height: fit-content;
   align-self: flex-end;
+  width: 45%;
 }
 
 @media only screen and (max-width: 480px) {

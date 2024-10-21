@@ -96,6 +96,18 @@ const SlideCarrousel = ({ offres }) => {
       >
         &#8594;
       </button>
+
+      {/* Dots indicator */}
+      <div className={styles.dotsContainer}>
+        {offres.map((_, index) => (
+          <span
+            key={index}
+            className={`${styles.dot} ${
+              index === currentIndex ? styles.activeDot : ""
+            }`}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 };

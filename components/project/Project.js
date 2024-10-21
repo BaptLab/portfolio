@@ -16,8 +16,8 @@ const Project = (props) => {
       <Image
         src={props.imagePath}
         alt={props.clientName}
-        width={579}
-        height={397}
+        width={400}
+        height={400}
       />
       <div className={styles.projectInfos}>
         <span className={styles.projectId}>

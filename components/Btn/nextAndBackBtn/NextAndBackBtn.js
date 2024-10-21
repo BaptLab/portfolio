@@ -1,11 +1,15 @@
 import { useRouter } from "next/router"; // Import useRouter for navigation
 import styles from "./nextandbackbtn.module.css";
 
-const NextAndBackBtn = (props) => {
+const NextAndBackBtn = ({
+  btnTxt,
+  direction,
+  totalProjects,
+}) => {
   const router = useRouter();
+  const currentId = parseInt(router.query.projectId); // Get the current project ID from the URL
 
   const handleNavigation = (direction) => {
-    const currentId = parseInt(router.query.projectId); // Get the current project ID from the URL
     let nextId;
 
     if (direction === "next") {
@@ -18,30 +22,40 @@ const NextAndBackBtn = (props) => {
     router.push(`/projects/0${nextId}`);
   };
 
+  // Conditions to hide or show buttons
+  const isFirstProject = currentId === 1;
+  const isLastProject = currentId === totalProjects;
+  const isSingleProject = totalProjects === 1;
+
   return (
     <>
-      {props.direction === "back" && (
-        <div
-          className={`${styles.btnContainer} ${styles.back}`}
-          data-text={`New ${props.btnTxt}`} /* New text on hover */
-          onClick={() => handleNavigation("back")} // Handle back navigation on click
-        >
-          <span className={styles.arrowBack}>
-            [←] {props.btnTxt}
-          </span>
-        </div>
-      )}
-      {props.direction === "next" && (
-        <div
-          className={`${styles.btnContainer} ${styles.next}`}
-          data-text={`${props.btnTxt} [→]`} /* New text on hover */
-          onClick={() => handleNavigation("next")} // Handle next navigation on click
-        >
-          <span className={styles.arrowNext}>
-            {props.btnTxt} [→]
-          </span>
-        </div>
-      )}
+      {!isSingleProject &&
+        direction === "back" &&
+        !isFirstProject && (
+          <div
+            className={`${styles.btnContainer} ${styles.back}`}
+            data-text={`[←] ${btnTxt}`} /* New text on hover */
+            onClick={() => handleNavigation("back")} // Handle back navigation on click
+          >
+            <span className={styles.arrowBack}>
+              [←] {btnTxt}
+            </span>
+          </div>
+        )}
+
+      {!isSingleProject &&
+        direction === "next" &&
+        !isLastProject && (
+          <div
+            className={`${styles.btnContainer} ${styles.next}`}
+            data-text={`${btnTxt} [→]`} /* New text on hover */
+            onClick={() => handleNavigation("next")} // Handle next navigation on click
+          >
+            <span className={styles.arrowNext}>
+              {btnTxt} [→]
+            </span>
+          </div>
+        )}
     </>
   );
 };

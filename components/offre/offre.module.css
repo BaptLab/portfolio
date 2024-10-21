@@ -39,7 +39,6 @@
 @media only screen and (max-width: 480px) {
   .offreContainer {
     padding: 17px;
-    max-width: 360px;
     min-width: 250px;
     width: 100%;
     font-size: 1.25em;

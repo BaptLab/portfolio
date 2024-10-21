@@ -36,11 +36,12 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       project: project || null,
+      totalProjects: projects.length, // Pass the total number of projects
     },
   };
 }
 
-const ProjectPage = ({ project }) => {
+const ProjectPage = ({ project, totalProjects }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -113,10 +114,19 @@ const ProjectPage = ({ project }) => {
                 />
               ))}
             </div>
+
+            {/* Pass totalProjects to NextAndBackBtn */}
             <NextAndBackBtn
               direction="next"
               btnTxt="projet suivant"
+              totalProjects={totalProjects}
             />
+            <NextAndBackBtn
+              direction="back"
+              btnTxt="projet précédent"
+              totalProjects={totalProjects}
+            />
+
             <ActionBtn
               navTo="/contact"
               btnText="Contactez-moi"

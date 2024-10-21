@@ -1,3 +1,10 @@
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align buttons */
+  padding: 1rem; /* Optional: Adjust spacing if needed */
+}
+
 .btnContainer {
   position: relative;
   text-transform: uppercase;
@@ -5,25 +12,22 @@
   font-family: "PPFormula";
   display: flex;
   cursor: pointer;
-  overflow: hidden; /* To hide text moving out of bounds */
+  overflow: hidden;
+  width: 100%; /* Adjust width as needed for consistency */
 }
 
 .btnContainer span {
   display: inline-block;
   position: relative;
-  transition: transform 0.2s ease-out; /* Smooth transition for the text movement */
+  transition: transform 0.2s ease-out;
 }
 
 .btnContainer:hover span {
-  transform: translateY(
-    -100%
-  ); /* Move the original text up on hover */
+  transform: translateY(-100%);
 }
 
 .btnContainer::before {
-  content: attr(
-    data-text
-  ); /* Dynamically inject the new text using data attribute */
+  content: attr(data-text);
   position: absolute;
   top: 100%;
   left: 0;
@@ -31,22 +35,27 @@
   height: 100%;
   display: flex;
   align-items: center;
+  transition: transform 0.2s ease-out;
+}
+
+.btnContainer.back::before {
+  justify-content: flex-start;
+}
+
+.btnContainer.next::before {
   justify-content: flex-end;
-  transition: transform 0.2s ease-out; /* Smooth transition for the new text */
 }
 
 .btnContainer:hover::before {
-  transform: translateY(
-    -100%
-  ); /* Bring the new text up on hover */
+  transform: translateY(-100%);
 }
 
-.next {
-  justify-content: end;
-  display: flex;
-}
-
+/* Ensure .back is aligned to the start (left) */
 .back {
-  justify-content: start;
-  display: flex;
+  justify-content: flex-start;
+}
+
+/* Ensure .next is aligned to the end (right) */
+.next {
+  justify-content: flex-end;
 }
