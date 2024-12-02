@@ -43,5 +43,24 @@
       "/images/projets/murmurations/murmurations_2.PNG",
       "/images/projets/murmurations/murmurations_3.PNG"
     ]
+  },
+  {
+    "id": "03",
+    "clientName": "Baptiste LABAUNE - Chess Puzzle Maker",
+    "date": "Novembre 2024",
+    "offer": "Projet personnel",
+    "technologies": [
+      "HTML, CSS, Typescript",
+      "Next.js",
+      "PHP",
+      "Lichess API"
+    ],
+    "description": "Création d'une application web permettant de générer des exercices d'échecs personnalisés à partir de l'API Lichess. Les utilisateurs peuvent choisir des thèmes spécifiques et obtenir des problèmes prêts à être imprimés ou utilisés en ligne. Un projet qui facilite l'entraînement des passionnés d'échecs.",
+    "liveSite": "https://chesspuzzlemaker.com",
+    "coverImage": ["/images/projets/murmurations/CPM1.PNG"],
+    "images": [
+      "/images/projets/CPM/CPM1.PNG",
+      "/images/projets/CPM/CPM2.PNG"
+    ]
   }
 ]
