@@ -32,4 +32,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: ./www/baptistelabaune.om # Ensure this ends with a slash to denote a directory
+          server-dir: ./www/baptistelabaune.com/ # Ensure this ends with a slash to denote a directory
