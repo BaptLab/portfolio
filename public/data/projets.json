@@ -1,66 +1,79 @@
 [
-  {
-    "id": "01",
-    "clientName": "Mathieu LEFEBVRE - TruePeak Productions",
-    "date": "2024",
-    "offer": "Site Statique Basique",
-    "technologies": [
-      "HTML, CSS, JavaScript",
-      "React",
-      "Maquette sur mesure"
-    ],
-    "description": "Création du site vitrine True Peak Productions pour Mathieu Lefebvre, ingénieur du son, afin de promouvoir son activité et son expertise dans le domaine de l'audio.",
-    "liveSite": "https://truepeakproductions.com",
-    "coverImage": [
-      "/images/projets/truepeak/logo_truepeak.png"
-    ],
-    "images": [
-      "/images/projets/truepeak/TruePeak_1.PNG",
-      "/images/projets/truepeak/TruePeak_2.PNG",
-      "/images/projets/truepeak/TruePeak_3.PNG",
-      "/images/projets/truepeak/TruePeak_4.PNG"
-    ]
-  },
-  {
-    "id": "02",
-    "clientName": "Lorenzo NACCARATO - Murmurations",
-    "date": "Août/Septembre 2024",
-    "offer": "Demande personnalisées",
-    "technologies": [
-      "HTML, CSS, JavaScript",
-      "Wordpress",
-      "Mapbox",
-      "Facebook & Instagram API",
-      "Conception visuelle sur mesure"
-    ],
-    "description": "Développement d'une carte interactive pour suivre en temps réel la tournée « Murmurations » de Lorenzo Naccarato, symbolisée par un oiseau en mouvement. Intégration de l'API MapBox pour les déplacements et des API Facebook/Instagram pour afficher les publications en direct. Un beau projet qui allie musique et technologie.",
-    "liveSite": "https://lorenzonaccarato.com/",
-    "coverImage": [
-      "/images/projets/murmurations/murmurations_cover.PNG"
-    ],
-    "images": [
-      "/images/projets/murmurations/murmurations_1.PNG",
-      "/images/projets/murmurations/murmurations_2.PNG",
-      "/images/projets/murmurations/murmurations_3.PNG"
-    ]
-  },
-  {
-    "id": "03",
-    "clientName": "Baptiste LABAUNE - Chess Puzzle Maker",
-    "date": "Novembre 2024",
-    "offer": "Projet personnel",
-    "technologies": [
-      "HTML, CSS, Typescript",
-      "Next.js",
-      "PHP",
-      "Lichess API"
-    ],
-    "description": "Création d'une application web permettant de générer des exercices d'échecs personnalisés à partir de l'API Lichess. Les utilisateurs peuvent choisir des thèmes spécifiques et obtenir des problèmes prêts à être imprimés ou utilisés en ligne. Un projet qui facilite l'entraînement des passionnés d'échecs.",
-    "liveSite": "https://chesspuzzlemaker.com",
-    "coverImage": ["/images/projets/CPM/CPM1.PNG"],
-    "images": [
-      "/images/projets/CPM/CPM1.PNG",
-      "/images/projets/CPM/CPM2.PNG"
-    ]
-  }
+	{
+		"id": "01",
+		"clientName": "Mathieu LEFEBVRE - TruePeak Productions",
+		"date": "2024",
+		"offer": "Site Statique Basique",
+		"technologies": [
+			"HTML, CSS, JavaScript",
+			"React",
+			"Maquette sur mesure"
+		],
+		"description": "Création du site vitrine True Peak Productions pour Mathieu Lefebvre, ingénieur du son, afin de promouvoir son activité et son expertise dans le domaine de l'audio.",
+		"liveSite": "https://truepeakproductions.com",
+		"coverImage": ["/images/projets/truepeak/logo_truepeak.png"],
+		"images": [
+			"/images/projets/truepeak/TruePeak_1.PNG",
+			"/images/projets/truepeak/TruePeak_2.PNG",
+			"/images/projets/truepeak/TruePeak_3.PNG",
+			"/images/projets/truepeak/TruePeak_4.PNG"
+		]
+	},
+	{
+		"id": "02",
+		"clientName": "Lorenzo NACCARATO - Murmurations",
+		"date": "Août/Septembre 2024",
+		"offer": "Demande personnalisée",
+		"technologies": [
+			"HTML, CSS, JavaScript",
+			"Wordpress",
+			"Mapbox",
+			"Facebook & Instagram API",
+			"Conception visuelle sur mesure"
+		],
+		"description": "Développement d'une carte interactive pour suivre en temps réel la tournée « Murmurations » de Lorenzo Naccarato, symbolisée par un oiseau en mouvement. Intégration de l'API MapBox pour les déplacements et des API Facebook/Instagram pour afficher les publications en direct. Un beau projet qui allie musique et technologie.",
+		"liveSite": "https://lorenzonaccarato.com/",
+		"coverImage": ["/images/projets/murmurations/murmurations_cover.PNG"],
+		"images": [
+			"/images/projets/murmurations/murmurations_1.PNG",
+			"/images/projets/murmurations/murmurations_2.PNG",
+			"/images/projets/murmurations/murmurations_3.PNG"
+		]
+	},
+	{
+		"id": "03",
+		"clientName": "SkiMate",
+		"date": "Novembre 2026",
+		"offer": "Projet personnel",
+		"technologies": [
+			"HTML, CSS, Typescript",
+			"Next.js",
+			"PHP",
+			"Lichess API"
+		],
+		"description": "Création d'une application web permettant de générer des exercices d'échecs personnalisés à partir de l'API Lichess. Les utilisateurs peuvent choisir des thèmes spécifiques et obtenir des problèmes prêts à être imprimés ou utilisés en ligne. Un projet qui facilite l'entraînement des passionnés d'échecs.",
+		"liveSite": "https://chesspuzzlemaker.com",
+		"coverImage": ["/images/projets/CPM/CPM1.PNG"],
+		"images": [
+			"/images/projets/CPM/CPM1.PNG",
+			"/images/projets/CPM/CPM2.PNG"
+		]
+	},
+	{
+		"id": "04",
+		"clientName": "Baptiste LABAUNE - Chess Puzzle Maker",
+		"date": "Novembre 2025",
+		"offer": "Projet MALT - demande personnalisée",
+		"technologies": [
+			"HTML, CSS, Typescript",
+			"React Native",
+			"MongoDB",
+			"Docker, Android Studio, Expo",
+			"OpenStreetMap API, MapBox"
+		],
+		"description": "Création d'une carte interactive de domanes skiable avec des données OpenStreetMap : Stylisation de la carte, gestion du passage 2D/3D, focus au clic des élément de la carte et affichage d'informations détaillées, centrage camera et limite de déplacament de l'utilisateur, recherche des éléments par barre de recherche, filtrage des éléments affichés. La carte conserve les données en cache pour un chargement quasi instantanée. Une projet complexe mobilisant la manipulation de données et une intégration front originale",
+		"liveSite": "",
+		"coverImage": ["/images/projets/SkiMate/skimate.jpg"],
+		"images": ["/images/projets/SkiMate/skimate.jpg"]
+	}
 ]
