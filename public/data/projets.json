@@ -42,8 +42,8 @@
 	},
 	{
 		"id": "03",
-		"clientName": "SkiMate",
-		"date": "Novembre 2026",
+		"clientName": "Chess Puzzle Maker",
+		"date": "Novembre 2024",
 		"offer": "Projet personnel",
 		"technologies": [
 			"HTML, CSS, Typescript",
@@ -61,7 +61,7 @@
 	},
 	{
 		"id": "04",
-		"clientName": "Baptiste LABAUNE - Chess Puzzle Maker",
+		"clientName": "Projet MALT - SkiMate",
 		"date": "Novembre 2025",
 		"offer": "Projet MALT - demande personnalisée",
 		"technologies": [
